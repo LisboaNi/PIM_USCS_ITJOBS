@@ -4,51 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <style>
-        /* Estilo para as mensagens */
-        .message {
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../perfil.css" />
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-    <h1>Perfil</h1>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="logo">
+            IT Jobs
+        </div>
+        <div class="header-buttons">
+        <button onclick="window.location.href='./criar-vaga.html'" class="search-jobs">
+            <i class="fa fa-plus"></i> Criar Vaga
+        </button>
+        <button onclick="window.location.href='./lista-vaga-empresa.html'" class="search-jobs">
+            <i class="fa fa-list"></i> Listar Vaga
+        </button>
+        </div>
+    </header>    
+
+    <main>    
+        <!-- Área para mensagens de sucesso ou erro -->
+        <div id="message" class="message" style="display: none;"></div>
     
-    <!-- Área para mensagens de sucesso ou erro -->
-    <div id="message" class="message" style="display: none;"></div>
+        <div id="profileInfo">
+            <div class="header-flex">
+                <img id="userAvatarEmpresa" alt="Avatar">
+                <h1><span id="userNomeEmpresa"></span></h1>
+            </div> 
+            <br>
+            <p><strong>Endereço:</strong> <span id="userLocalizacaoEmpresa"></span></p>
+            <p><strong>Contato:</strong> <span id="userContatoEmpresa"></span></p>
+            <br>
+            <p><strong>Resumo:</strong> <span id="userResumoEmpresa"></span></p>
+            <!--<p><strong>Redes Sociais:</strong> <span id="userRedesSociaisEmpresa"></span></p>-->
+            
+            <div id="actionButtons">
+                <button id="logoutButton">
+                    <i class="fa fa-sign-out"></i> Desconectar
+                </button>                
+                <button onclick="window.location.href='perfil-empresa-editavel.html'" class="search-jobs">
+                    <i class="fa fa-pencil"></i> Editar
+                </button>
+            </div>  
+        </div>
+    </main>
 
-    <div id="profileInfo">
-        <p><strong>Nome da Empresa:</strong> <span id="userNomeEmpresa"></span></p>
-        <p><strong>Resumo da Empresa:</strong> <span id="userResumoEmpresa"></span></p>
-        <p><strong>Localização:</strong> <span id="userLocalizacaoEmpresa"></span></p>
-        <p><strong>Contato:</strong> <span id="userContatoEmpresa"></span></p>
-        <p><strong>Redes Sociais:</strong> <span id="userRedesSociaisEmpresa"></span></p>
-        <img id="userAvatarEmpresa" alt="Avatar" style="width: 100px; height: 100px;">
-        <button id="logoutButton">Sair</button>
-        <button onclick="window.location.href='perfil-empresa-editavel.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Editar
-        </buttonbutton>
-        <button onclick="window.location.href='../vaga/criar-vaga.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Criar Vaga
-        </buttonbutton>
-        <button onclick="window.location.href='../vaga/lista-vaga-empresa.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Listar Vaga
-        </buttonbutton>
-    </div>
+    <footer>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
 
-    <script src="/js/perfil-empresa.js"></script>
-
+    <script src="./perfil-empresa.js"></script>
 </body>
 </html>

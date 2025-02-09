@@ -4,54 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <style>
-        /* Estilo para as mensagens */
-        .message {
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../perfil.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-    <h1>Perfil</h1>
-    
-    <!-- Área para mensagens de sucesso ou erro -->
-    <div id="message" class="message" style="display: none;"></div>
 
-    <div id="profileInfo">
-        <p><strong>Nome:</strong> <span id="userName"></span></p>
-        <p><strong>Email:</strong> <span id="userEmail"></span></p>
-        <p><strong>Resumo:</strong> <span id="userResumo"></span></p>
-        <p><strong>Localização:</strong> <span id="userLocalizacao"></span></p>
-        <p><strong>Contato:</strong> <span id="userContato"></span></p>
-        <p><strong>Especialização:</strong> <span id="userEspecializacao"></span></p>
-        <p><strong>Link do Currículo:</strong> <span id="userLinkCurriculo"></span></p>
-        <p><strong>Redes Sociais:</strong> <span id="userRedesSociais"></span></p>
-        <img id="userAvatar" alt="Avatar" style="width: 100px; height: 100px;">
-        <button id="logoutButton">Sair</button>
-        <button onclick="window.location.href='perfil-profissional-editavel.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Editar
-        </buttonbutton>
-        <button onclick="window.location.href='../vaga/filtro-vaga.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Pesquisa Vaga
-        </buttonbutton>
-        <button onclick="window.location.href='../inscricoes/historico-inscricoes.html'" class="search-jobs">
-            <i class="fa fa-home"></i> Historico
-        </buttonbutton>
-    </div>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="logo">
+            IT Jobs
+        </div>
+        <div class="header-buttons">
+        <button onclick="window.location.href='./filtro-vaga.html'" class="search-jobs">
+            <i class="fa fa-search"></i> Pesquisa Vaga
+        </button>
+        <button onclick="window.location.href='./historico-inscricoes.html'" class="search-jobs">
+            <i class="fa fa-history"></i> Histórico
+        </button>
+        </div>
+    </header>
 
-    <script src="/js/perfil-profissional.js"></script>
+    <!-- Corpo da página (Main) -->
+    <main>
+        <div id="message" class="message" style="display: none;"></div>
+
+        <div id="profileInfo"> 
+            <div class="header-flex">
+                <img id="userAvatar" alt="Avatar">
+                <h1><span id="userName"></span></h1>
+            </div> 
+            <br>
+            <p><strong>Data de Nascimento:</strong> <span id="userDataNascimento"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+            <p><strong>Contato:</strong> <span id="userContato"></span></p>
+            <p><strong>Currículo:</strong> <span id="userLinkCurriculo"></span></p>
+            <p><strong>Endereço:</strong> <span id="userLocalizacao"></span></p>
+            <br>
+            <p><strong>Resumo:</strong> <span id="userResumo"></span></p>
+            <p><strong>Especialização:</strong> <span id="userEspecializacao"></span></p>
+          <!--<p><strong>Redes Sociais:</strong> <span id="userRedesSociais"></span></p>-->
+
+          <div id="actionButtons">
+            <button id="logoutButton">
+                <i class="fa fa-sign-out"></i> Desconectar
+            </button>                
+            <button onclick="window.location.href='perfil-profissional-editavel.html'" class="search-jobs">
+                <i class="fa fa-pencil"></i> Editar
+            </button>
+            </div>  
+        </div>        
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./perfil-profissional.js"></script>
 
 </body>
 </html>

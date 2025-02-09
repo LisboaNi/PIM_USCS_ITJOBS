@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bem-vindo ao PIM</title>
-</head>
-<body>
+
+    <link rel="stylesheet" href="index.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        IT Jobs
+      </div>
+    </header>
+
+    <main>
     <div class="container">
-        <h1>Bem-vindo ao Sistema PIM</h1>
-        <p>Cadastre-se para começar!</p>
-        <button id="register-btn">Cadastrar</button>
-        <button id="login-btn">Login</button>
+      <h1>Bem-vindo ao IT Jobs</h1>
+      <p>Cadastre-se para começar ou realize o login!</p>
+      <button id="register-btn">Cadastrar</button>
+      <button id="login-btn">Login</button>
     </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
 
     <!-- Link para a página de cadastro -->
     <script>
-        document.getElementById('register-btn').addEventListener('click', function() {
-            window.location.href = '/views/cadastro/cadastro.html'; // Redireciona para a página de cadastro
+      document
+        .getElementById("register-btn")
+        .addEventListener("click", function () {
+          window.location.href = "/views/cadastro/cadastro.html"; // Redireciona para a página de cadastro
         });
-        document.getElementById('login-btn').addEventListener('click', function() {
-            window.location.href = '/views/login/login.html'; // Redireciona para a página de cadastro
+      document
+        .getElementById("login-btn")
+        .addEventListener("click", function () {
+          window.location.href = "/views/login/login.html"; // Redireciona para a página de cadastro
         });
     </script>
-</body>
+
+  </body>
 </html>

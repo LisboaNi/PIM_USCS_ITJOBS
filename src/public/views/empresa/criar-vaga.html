@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Vaga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../perfil.css" />
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="logo">
+            IT Jobs
+        </div>
+        <div class="header-buttons">
+        <button onclick="window.location.href='./lista-vaga-empresa.html'" class="search-jobs">
+            <i class="fa fa-list"></i> Listar Vaga
+        </button>
+        <button onclick="window.location.href='./perfil-empresa.html'" class="search-jobs">
+            <i class="fa fa-user"></i> Perfil
+        </button>
+        </div>
+    </header>
+
+<main>
+
+    <div id="profileInfo">
+        <h1>Nova Vaga</h1>
+
+        <form id="createJobForm"> <!-- Adicionei o id aqui -->
+            <div class="form-group">
+                <div class="form-field">
+                    <p><strong>Título da Vaga:</strong><input type="text" id="titulo" name="titulo" required placeholder="Desenvolvedor Frontend"/></p>
+                </div>
+                <div class="form-field">
+                    <p><strong>Salário:</strong><input type="number" id="salario" name="salario" step="0.01" placeholder="1500"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="tipo_contrato">Tipo de Contrato</label>
+                    <select id="tipo_contrato" name="tipo_contrato" required>
+                        <option value="CLT">CLT</option>
+                        <option value="PJ">PJ</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Estágio">Estágio</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="nivel_experiencia">Nível de Experiência</label>
+                    <select id="nivel_experiencia" name="nivel_experiencia" required>
+                        <option value="Júnior">Júnior</option>
+                        <option value="Pleno">Pleno</option>
+                        <option value="Sênior">Sênior</option>
+                    </select>
+                </div>
+            </div>
+
+            <p><strong>Endereço:</strong><input type="text" id="localizacao" name="localizacao" placeholder="Região de Santo André" /></p>
+            <br>
+            <p><strong>Descrição:</strong><textarea id="descricao" name="descricao" rows="5" required></textarea></p>
+
+            <div id="actionButtons">
+                <button type="submit" id="saveButton"><i class="fa fa-save"></i> Criar</button>
+                <a href="javascript:history.back()" id="btn-voltar">
+                    <i class="fa fa-arrow-left"></i> Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./criar-vaga.js"></script>
+
+</body>
+</html>

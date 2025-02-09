@@ -1,64 +1,104 @@
 create database pim character set utf8mb4 collate utf8mb4_unicode_ci;
 
-CREATE TABLE Users (
+-------- Tabelas básicas do banco
+
+CREATE TABLE TypeUsers (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    type_name VARCHAR(255) NOT NULL UNIQUE
+);
+
+INSERT INTO TypeUsers (id, type_name) VALUES
+(1, 'adm'),
+(2, 'empresa'),
+(3, 'profissional');
+
+CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    cpf_cnpj VARCHAR(20) UNIQUE,
-    type_user_id INT NOT NULL, -- Identifica o tipo de usuário (ex: Profissional, Empresa)
+    cpf_cnpj VARCHAR(20) NOT NULL UNIQUE,
+    type_user_id INT NOT NULL,
     logo VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at TIMESTAMP NULL -- Para soft delete
+    deleted_at TIMESTAMP NULL,
+    FOREIGN KEY (type_user_id) REFERENCES TypeUsers(id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_profissional_profile (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL, -- Chave estrangeira que referencia o usuário
-    nome_completo VARCHAR(255),
+    user_id INT NOT NULL,
+    nome_completo VARCHAR(255) NOT NULL,
     data_nascimento DATE,
     localizacao VARCHAR(255),
     contato VARCHAR(255),
     especializacao VARCHAR(255),
     resumo TEXT,
-    avatar VARCHAR(255),
-    redes_sociais JSON, -- Armazena as redes sociais em formato JSON
+    avatar LONGTEXT,
+    redes_sociais JSON,
     link_curriculo VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at TIMESTAMP NULL, -- Para soft delete
-    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
+    deleted_at TIMESTAMP NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_empresa_profile (
-  id INT AUTO_INCREMENT PRIMARY KEY,      
-  user_id INT NOT NULL,                   
-  nome_completo VARCHAR(255) NOT NULL,    
-  localizacao VARCHAR(255),               
-  contato VARCHAR(255),                   
-  resumo TEXT,                            
-  avatar VARCHAR(255),                    
-  redes_sociais JSON,                     
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
-  deleted_at TIMESTAMP NULL,              
-  FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE  
+    id INT AUTO_INCREMENT PRIMARY KEY,      
+    user_id INT NOT NULL,                   
+    nome_completo VARCHAR(255) NOT NULL,    
+    localizacao VARCHAR(255),               
+    contato VARCHAR(255),                   
+    resumo TEXT,                            
+    avatar LONGTEXT,                        
+    redes_sociais JSON,                     
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
+    deleted_at TIMESTAMP NULL,              
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE  
 );
 
-ALTER TABLE user_empresa_profile MODIFY avatar LONGTEXT;
+CREATE TABLE vagas (
+    vaga_id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    empresa_id INT NOT NULL,
+    empresa_nome VARCHAR(255) NOT NULL,
+    localizacao VARCHAR(255), 
+    salario DECIMAL(10, 2), 
+    tipo_contrato ENUM('CLT', 'PJ', 'Freelancer', 'Estágio') NOT NULL,
+    nivel_experiencia ENUM('Júnior', 'Pleno', 'Sênior') NOT NULL,
+    status ENUM('Aberta', 'Fechada') DEFAULT 'Aberta',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+    FOREIGN KEY (empresa_id) REFERENCES user_empresa_profile(id) ON DELETE CASCADE
+);
 
-ALTER TABLE user_profissional_profile MODIFY avatar LONGTEXT;
+CREATE TABLE inscricoes (
+    inscricao_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    vaga_id INT NOT NULL,
+    status_inscricao ENUM('em andamento', 'processo seletivo', 'encerrado', 'aprovado') DEFAULT 'em andamento',
+    data_inscricao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (vaga_id) REFERENCES vagas(vaga_id) ON DELETE CASCADE,
+    UNIQUE (user_id, vaga_id)
+);
 
+------------- Trigger auxilia para criar um perfil automatico
 
--- Trigger para preencher automaticamente o perfil de profissional
 DELIMITER $$
 
 CREATE TRIGGER trg_fill_professional_profile
 AFTER INSERT ON users
 FOR EACH ROW
 BEGIN
-    IF NEW.type_user_id = (SELECT id FROM type_user WHERE type_name = 'profissional') THEN
+    IF NEW.type_user_id = 3 THEN
         INSERT INTO user_profissional_profile (
             user_id, 
             nome_completo, 
@@ -75,14 +115,14 @@ BEGIN
         ) VALUES (
             NEW.id, 
             NEW.name, 
-            '1990-01-01', 
-            'Localização Padrão', 
-            'Contato Padrão', 
-            'Especialização Padrão', 
-            'Resumo padrão do profissional', 
-            'avatar_padrao.png', 
-            JSON_OBJECT('linkedin', '', 'github', ''), 
-            'link_curriculo_padrao.pdf',
+            NULL, 
+            NULL, 
+            NULL, 
+            NULL, 
+            NULL, 
+            NULL, 
+            JSON_OBJECT(), 
+            NULL,
             NOW(), 
             NOW()
         );
@@ -97,7 +137,7 @@ CREATE TRIGGER trg_fill_company_profile
 AFTER INSERT ON users
 FOR EACH ROW
 BEGIN
-    IF NEW.type_user_id = (SELECT id FROM type_user WHERE type_name = 'empresa') THEN
+    IF NEW.type_user_id = 2 THEN
         INSERT INTO user_empresa_profile (
             user_id, 
             nome_completo, 
@@ -111,11 +151,11 @@ BEGIN
         ) VALUES (
             NEW.id, 
             NEW.name, 
-            'Localização da Empresa Padrão', 
-            'Contato da Empresa Padrão', 
-            'Resumo padrão da empresa', 
-            'avatar_empresa_padrao.png', 
-            JSON_OBJECT('linkedin', '', 'site', ''), 
+            NULL, 
+            NULL, 
+            NULL, 
+            NULL, 
+            JSON_OBJECT(), 
             NOW(), 
             NOW()
         );
@@ -123,36 +163,3 @@ BEGIN
 END$$
 
 DELIMITER;
-
--- Criação de vaga
-CREATE TABLE vagas (
-    vaga_id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(255) NOT NULL,
-    descricao TEXT NOT NULL,
-    empresa_id INT NOT NULL, -- ID da empresa que criou a vaga
-    empresa_nome VARCHAR(255) NOT NULL, -- Nome da empresa
-    localizacao VARCHAR(255), 
-    salario DECIMAL(10, 2), 
-    tipo_contrato ENUM('CLT', 'PJ', 'Freelancer', 'Estágio') NOT NULL,
-    nivel_experiencia ENUM('Júnior', 'Pleno', 'Sênior') NOT NULL,
-    status ENUM('Aberta', 'Fechada') DEFAULT 'Aberta',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at TIMESTAMP NULL,
-    FOREIGN KEY (empresa_id) REFERENCES Users(id) ON DELETE CASCADE -- Relacionando a empresa à tabela Users
-);
-
--- Inscrições a vaga
-CREATE TABLE inscricoes (
-    inscricao_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL, -- ID do usuário que se inscreveu (profissional)
-    vaga_id INT NOT NULL, -- ID da vaga na qual o usuário se inscreveu
-    status_inscricao ENUM('em andamento', 'processo seletivo', 'encerrado', 'aprovado') DEFAULT 'em andamento',
-    data_inscricao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(id),
-    FOREIGN KEY (vaga_id) REFERENCES vagas(vaga_id),
-    UNIQUE (user_id, vaga_id), -- Garantindo que o mesmo usuário não possa se inscrever mais de uma vez na mesma vaga
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at TIMESTAMP NULL
-);

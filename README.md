@@ -1,33 +1,12 @@
-Instalar Dependencias 
-### npm install
+A plataforma IT Jobs é uma solução focada em conectar candidatos da área de TI com empresas que buscam profissionais especializados. 
 
-Arquivo Package
-### npm init
+O projeto foi desenvolvido como parte do TCC da Faculdade USCS - Universidade de São Caetano do SUl, na turma de ADS - Análise e Desenvolvimento de Sistemas. 
 
-Gerenciar Requisições
-### npm install express
+A plataforma permite que os candidatos se cadastrem, visualizem vagas abertas e se candidatem diretamente, enquanto as empresas podem publicar suas vagas e gerenciar os candidatos na area em especificamente de TI.
 
-Reiniciar o Servidor - Alteração
-### npm install -g nodemon
-### npm install --save-dev nodemon
+As principais ferramentas e tecnologias utilizadas no desenvolvimento do sistema incluem:
 
-Sequilize biblioteca JS Gerenciamento de dados SQL
-### npm install --save sequelize
-
-Instalar o drive do BD - MySQL
-### npm install --save mysql2 
-
------------------------------
-
-### npm install express
-### npm install multer
-### npm install --save sequelize
-### npm install mysql2 
-### npm install --save mysql2 
-### npm install bcrypt
-### npx nodemon src/server.js
-### npm install helmet
-### npm install 
-### npm install dotenv
-
-
+1. Backend: Utilização de uma API baseada em Node.js com Express para gerenciamento das requisições;
+2. Banco de dados: O sistema utiliza um banco de dados relacional, como MySQL para armazenar informações de candidatos, empresas e vagas;
+3. Autenticação: O sistema faz uso de tokens JWT para autenticar candidatos e empresas, garantindo a segurança das informações;
+4. Frontend: A interface do usuário é construída com React, proporcionando uma experiência interativa e fluida para os usuários.

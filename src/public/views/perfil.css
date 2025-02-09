@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Estilo do container do perfil */
+#profileInfo {
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 25px;
+    background-color: #c9d9e9; /* Fundo branco para o perfil */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+}
+
+#profileInfo p span {
+  font-style: italic;
+  color: black;
+}
+
+h1 {
+  margin-left: 20px; /* Adiciona espaço entre o avatar e o título */
+}
+
+#userAvatar, #userAvatarEmpresa {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #231942;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+#profileInfo p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #666;
+    word-wrap: break-word; /* Garante que o texto não ultrapasse os limites */
+}  
+
+#profileInfo p strong {
+  color: #231942;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-group {
+    display: flex;
+    gap: 30px; /* Espaçamento entre as colunas */
+    margin-bottom: 16px; /* Espaçamento abaixo do grupo */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
+}
+  
+.form-field {
+    flex: 1; /* Faz com que os campos se ajustem para ocupar o mesmo espaço */
+    min-width: 250px; /* Aumenta a largura mínima para 250px */
+}
+
+#userResumo, #userEspecializacao, #userResumoEmpresa {
+    font-style: italic;
+    color: #555;
+    text-align: justify; /* Funciona agora */
+    display: block; /* Transforma o span em um elemento de bloco */
+    white-space: pre-wrap; /* Preserva quebras de linha */
+    word-wrap: break-word; /* Garante quebra de palavras longas */
+  }
+
+  #fileInput {
+    display: block; /* Garante que o input seja exibido como bloco */
+    margin-top: 10px;
+    padding: 8px; /* Adiciona padding interno para melhorar a área clicável */
+    font-size: 1rem; /* Define um tamanho de fonte consistente */
+    color: #333; /* Cor do texto */
+    background-color: #f9f9f9; /* Cor de fundo leve */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas para suavizar o visual */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeito suave de transição */
+    width: 100%; /* Faz com que o input ocupe toda a largura disponível */
+  }
+  
+  #fileInput:focus {
+    border-color: #4b5c73; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+    box-shadow: 0 0 5px rgba(75, 92, 115, 0.3); /* Adiciona uma sombra suave para foco */
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #4b5c73;
+    outline: none;
+    box-shadow: 0 0 5px rgba(75, 92, 115, 0.3);
+  }
+  
+  textarea {
+    min-height: 80px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #231942;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%23333" stroke-width="2" d="M2 4l6 6 6-6" /%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 7px;
+}

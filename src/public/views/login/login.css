@@ -1,0 +1,71 @@
+main {
+  background-color: #c9d9e9;
+}
+
+/* Estilo do contêiner de login */
+.login-container {
+  margin: 80px auto 20px; /* Ajusta a margem para acomodar o cabeçalho fixo */
+  max-width: 500px; /* Aumentado para um contêiner mais espaçoso */
+  width: 100%; /* Garante que o contêiner ocupe toda a largura disponível em telas menores */
+  text-align: center;
+  background-color: #fff; /* Fundo branco para destacar o formulário */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px; /* Mais espaço interno */
+}
+
+.login-container h2 {
+  font-size: 2rem; /* Aumentado para destacar o título */
+  color: #231942; /* Mesma cor do cabeçalho */
+  margin-bottom: 25px;
+}
+
+/* Estilo do formulário */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Mais espaçamento entre os campos */
+}
+
+#loginForm input {
+  padding: 15px; /* Aumentado para campos maiores */
+  font-size: 1.1rem; /* Tamanho da fonte maior */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#loginForm input:focus {
+  outline: none;
+  border-color: #231942;
+  box-shadow: 0 0 5px rgba(35, 25, 66, 0.3);
+}
+
+/* Estilo do botão */
+#loginForm button {
+  padding: 15px 20px; /* Botão maior */
+  font-size: 1.2rem; /* Tamanho da fonte maior */
+  font-weight: bold;
+  color: #fff;
+  background-color: #231942;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#loginForm button:hover {
+  background-color: #38276b;
+}
+
+/* Mensagem de erro */
+#errorMessage {
+  margin-top: 15px;
+  font-size: 0.95rem; /* Levemente maior */
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px;
+  display: none; /* Oculta por padrão */
+}

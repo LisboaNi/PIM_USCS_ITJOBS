@@ -51,6 +51,7 @@ app.post('/upload', upload.single('avatar'), (req, res) => {
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'src', 'views')));
+app.use('/public', express.static('public'));
 
 app.use('/api', vagaRoutes);
 app.use('/api', inscricaoRoutes);

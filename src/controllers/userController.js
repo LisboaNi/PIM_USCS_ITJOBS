@@ -162,7 +162,7 @@ const getUserProfile = async (req, res) => {
 
 // Lógica para editar perfil do usuário
 const editUserProfile = async (req, res) => {
-  const { nome_completo, resumo, localizacao, contato, redes_sociais, avatar } = req.body;
+  const { nome_completo, resumo, localizacao, contato, redes_sociais, avatar, data_nascimento, especializacao, link_curriculo } = req.body;
 
   try {
     // Verificar se o token foi passado na requisição
@@ -192,8 +192,11 @@ const editUserProfile = async (req, res) => {
           resumo,
           localizacao,
           contato,
-          redes_sociais: JSON.stringify(redes_sociais),
+          redes_sociais: redes_sociais ? JSON.stringify(redes_sociais) : null,
           avatar,
+          data_nascimento: data_nascimento || userProfissionalProfile.data_nascimento, // Verifica se data de nascimento foi enviada
+          especializacao: especializacao || userProfissionalProfile.especializacao,  // Verifica se especialização foi enviada
+          link_curriculo: link_curriculo || userProfissionalProfile.link_curriculo,  // Verifica se link do currículo foi enviado
         });
         return res.status(200).json({ message: 'Perfil profissional atualizado com sucesso!' });
       } else {
@@ -208,7 +211,7 @@ const editUserProfile = async (req, res) => {
           resumo,
           localizacao,
           contato,
-          redes_sociais: JSON.stringify(redes_sociais),
+          redes_sociais: redes_sociais ? JSON.stringify(redes_sociais) : null,
           avatar,
         });
         return res.status(200).json({ message: 'Perfil de empresa atualizado com sucesso!' });

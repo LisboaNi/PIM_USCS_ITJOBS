@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Vaga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../perfil.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          IT Jobs
+        </div>
+        <div class="header-buttons">
+        <button onclick="window.location.href='./lista-vaga-empresa.html'" class="search-jobs">
+            <i class="fa fa-list"></i> Listar Vaga
+        </button>
+          <button onclick="window.location.href='./perfil-empresa.html'" class="search-jobs">
+            <i class="fa fa-user"></i> Perfil
+        </button>
+        </div>
+    </header>
+
+    <main>
+        <form class="form-editar-vaga">
+            <div id="profileInfo">
+                <h1>Editar Vaga</h1>
+
+                <p><strong>ID da Vaga:</strong><input type="text" id="vaga-id" disabled></p>
+
+                <p><strong>Titulo da Vaga:</strong><input type="text" id="titulo" class="editable" /></p>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        <p><strong>Endereço:</strong><input type="text" id="localizacao" class="editable" /></p>
+                    </div>
+                    <div class="form-field">
+                        <p><strong>Salario:</strong><input type="number" id="salario" class="editable" /></p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="tipo_contrato">Tipo de Contrato</label>
+                        <select id="tipo_contrato">
+                            <option value="CLT">CLT</option>
+                            <option value="PJ">PJ</option>
+                            <option value="Estágio">Estágio</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="nivel_experiencia">Nível de Experiência</label>
+                        <select id="nivel_experiencia">
+                            <option value="Júnior">Júnior</option>
+                            <option value="Pleno">Pleno</option>
+                            <option value="Sênior">Sênior</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="Aberta">Aberta</option>
+                            <option value="Fechada">Fechada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p><strong>Descrição:</strong><textarea id="descricao"></textarea></p>
+                <br>
+
+                <div id="actionButtons">
+                    <!-- Botão de Salvar com tipo submit -->
+                    <button type="submit" id="saveButton">
+                        <i class="fa fa-save"></i> Salvar
+                    </button>
+                    <!-- Botão de Excluir com ícone de "x" -->
+                    <button type="button" class="btn btn-danger" id="btn-excluir">
+                        <i class="fa fa-times"></i> Excluir Vaga
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script no final -->
+    <script src="./editar-vaga.js"></script>
+</body>
+</html>
+

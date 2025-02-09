@@ -1,0 +1,28 @@
+** Download e configurar Node
+** Download e configurar MySql
+
+// Instalar dependências
+npm init
+npm install
+
+// Gerenciar requisições
+npm install express
+npm install multer
+npm install cors
+
+// Banco (Sequelize + MySQL)
+npm install --save sequelize  
+npm install --save mysql2  
+
+// Segurança e Criptografia
+npm install bcrypt  
+npm install helmet  
+npm install dotenv  
+npm install jsonwebtoken
+
+// Reiniciar o servidor automaticamente em alterações
+npm install --save-dev nodemon  
+npm install -g nodemon  
+
+// Rodar o servidor com nodemon
+npx nodemon src/app.js

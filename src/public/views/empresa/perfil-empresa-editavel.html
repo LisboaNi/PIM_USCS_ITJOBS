@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <style>
-        /* Estilo para as mensagens */
-        .message {
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-
-        /* Estilo para os campos editáveis */
-        .editable {
-            width: 100%;
-            padding: 5px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        /* Estilo para a imagem de avatar */
-        #userAvatarEmpresa {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        /* Estilo para o campo de upload de imagem */
-        #fileInput {
-            margin-top: 10px;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../perfil.css">
     </style>
-</head>
-<body>
-    <h1>Perfil Editável</h1>
-    
-    <!-- Área para mensagens de sucesso ou erro -->
-    <div id="message" class="message" style="display: none;"></div>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+          IT Jobs
+      </div>
+      <div class="header-buttons">
+      <button onclick="window.location.href='./criar-vaga.html'" class="search-jobs">
+          <i class="fa fa-plus"></i> Criar Vaga
+      </button>
+      <button onclick="window.location.href='./lista-vaga-empresa.html'" class="search-jobs">
+          <i class="fa fa-list"></i> Listar Vaga
+      </button>
+      </div>
+  </header>  
+  
+
+    <main>
+      <!-- Área para mensagens de sucesso ou erro -->
+    <div id="message" class="message" style="display: none"></div>
 
     <div id="profileInfo">
-        <p><strong>Nome da Empresa:</strong> <input type="text" id="userNomeEmpresa" class="editable"></p>
-        <p><strong>Resumo da Empresa:</strong> <textarea id="userResumoEmpresa" class="editable"></textarea></p>
-        <p><strong>Localização:</strong> <input type="text" id="userLocalizacaoEmpresa" class="editable"></p>
-        <p><strong>Contato:</strong> <input type="text" id="userContatoEmpresa" class="editable"></p>
-        <p><strong>Redes Sociais:</strong> <textarea id="userRedesSociaisEmpresa" class="editable"></textarea></p>
-        
-        <!-- Avatar do usuário -->
+      <h1>Perfil Editável</h1>
+
+      <div class="form-group">
         <img id="userAvatarEmpresa" alt="Avatar">
-        <br>
-        
-        <!-- Campo para alteração do avatar -->
-        <input type="file" id="fileInput" accept="image/*">
-        <br>
-        
-        <button id="saveButton">Salvar</button>
-        <button id="logoutButton">Sair</button>
+        <div class="form-field">
+            <br>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
     </div>
+      <p>
+        <strong>Nome da Empresa:</strong>
+        <input type="text" id="userNomeEmpresa" class="editable" />
+      </p>
+      <div class="form-group">
+        <div class="form-field">
+          <p><strong>Endereço:</strong><input type="text" id="userLocalizacaoEmpresa" class="editable" /></p>
+        </div>
+        <div class="form-field">
+          <p><strong>Contato:</strong><input type="text" id="userContatoEmpresa" class="editable" /></p>
+        </div>
+    </div>
+      <br>
+      <p>
+        <strong>Resumo da Empresa:</strong>
+        <textarea id="userResumoEmpresa" class="editable"></textarea>
+      </p>
+      
+      <div id="actionButtons">
+        <button id="saveButton">
+            <i class="fa fa-save"></i> Salvar
+        </button>
+        <button id="cancelButton" onclick="window.location.href='perfil-empresa.html'">
+            <i class="fa fa-times"></i> Cancelar
+        </button>
+    </div>
+  </main>
 
-    <script src="/js/perfil-empresa-editavel.js"></script>
+    <footer>
+      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
 
-</body>
+    <script src="./perfil-empresa-editavel.js"></script>
+  </body>
 </html>
