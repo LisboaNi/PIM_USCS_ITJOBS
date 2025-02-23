@@ -1,12 +1,50 @@
-A plataforma IT Jobs é uma solução focada em conectar candidatos da área de TI com empresas que buscam profissionais especializados. 
+# IT Jobs - Plataforma de Conexão entre Candidatos e Empresas de TI
 
-O projeto foi desenvolvido como parte do TCC da Faculdade USCS - Universidade de São Caetano do SUl, na turma de ADS - Análise e Desenvolvimento de Sistemas. 
+**IT Jobs** é uma plataforma desenvolvida como parte do **TCC** da **Faculdade USCS** – Universidade de São Caetano do Sul, no curso de **Análise e Desenvolvimento de Sistemas (ADS)**. O objetivo da plataforma é **conectar candidatos da área de TI** com empresas que buscam **profissionais especializados** em diversas tecnologias.
 
-A plataforma permite que os candidatos se cadastrem, visualizem vagas abertas e se candidatem diretamente, enquanto as empresas podem publicar suas vagas e gerenciar os candidatos na area em especificamente de TI.
+## Funcionalidades da Plataforma
+- **Candidatos:** 
+  - 📄 Cadastro de candidatos com informações pessoais e profissionais.
+  - 🔍 Visualização de vagas abertas e possibilidade de se candidatar diretamente.
+- **Empresas:**
+  - 🏢 Cadastro de empresas e publicação de vagas de emprego.
+  - 📋 Gerenciamento de candidatos que se candidataram às vagas publicadas.
 
-As principais ferramentas e tecnologias utilizadas no desenvolvimento do sistema incluem:
+## Tecnologias e Ferramentas Utilizadas
 
-1. Backend: Utilização de uma API baseada em Node.js com Express para gerenciamento das requisições;
-2. Banco de dados: O sistema utiliza um banco de dados relacional, como MySQL para armazenar informações de candidatos, empresas e vagas;
-3. Autenticação: O sistema faz uso de tokens JWT para autenticar candidatos e empresas, garantindo a segurança das informações;
-4. Frontend: A interface do usuário é construída com React, proporcionando uma experiência interativa e fluida para os usuários.
+### Backend
+- 🔧 **Node.js** com **Express**: API RESTful para gerenciamento das requisições e integração com o banco de dados.
+- 🔐 **JWT (JSON Web Tokens)**: Sistema de autenticação seguro para garantir o acesso adequado de candidatos e empresas.
+
+### Banco de Dados
+- 🗃️ **MySQL**: Banco de dados relacional para armazenamento de informações de candidatos, empresas e vagas.
+
+### Frontend
+- 💻 **React**: Framework para construção da interface do usuário, proporcionando uma experiência fluida e interativa.
+
+### Outras Tecnologias
+- 🔄 **Sequelize**: ORM (Object-Relational Mapping) utilizado para facilitar a comunicação entre o backend e o banco de dados MySQL.
+- 🐳 **Docker**: Containerização do ambiente de desenvolvimento e produção.
+
+## Como Funciona
+1. **Candidatos** podem se cadastrar, fazer login, visualizar vagas abertas e se candidatar diretamente às vagas de seu interesse.
+2. **Empresas** podem se cadastrar, fazer login, publicar vagas e gerenciar candidatos que se candidataram às vagas.
+
+## Objetivo do Projeto
+O projeto foi desenvolvido com o objetivo de **facilitar a conexão entre profissionais de TI e empresas** em um mercado de trabalho altamente competitivo. A plataforma tem como foco a **eficiência, segurança e usabilidade**, proporcionando uma experiência simples e intuitiva para todos os usuários.
+
+## Links Importantes
+- **Repositório GitHub:** [GitHub - IT Jobs](https://github.com/LisboaNi/it-jobs) 🔗
+- **Link da Aplicação (em breve):** [IT Jobs]() 🌐
+
+## Tecnologias e Metodologias Utilizadas
+- 🛠️ **Backend:** Node.js, Express, JWT
+- 🗃️ **Banco de Dados:** MySQL, Sequelize
+- 💻 **Frontend:** Reacte CSS
+- 🔐 **Autenticação:** JWT (JSON Web Tokens)
+- 📂 **Versionamento:** Git, GitHub
+- 🐳 **Containerização:** Docker
+
+---
+
+Desenvolvido por alunos da USCS como parte do TCC de **Análise e Desenvolvimento de Sistemas** ().
