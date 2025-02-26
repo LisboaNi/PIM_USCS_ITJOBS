@@ -19,12 +19,8 @@
 ### Banco de Dados
 - 🗃️ **MySQL**: Banco de dados relacional para armazenamento de informações de candidatos, empresas e vagas.
 
-### Frontend
-- 💻 **React**: Framework para construção da interface do usuário, proporcionando uma experiência fluida e interativa.
-
 ### Outras Tecnologias
 - 🔄 **Sequelize**: ORM (Object-Relational Mapping) utilizado para facilitar a comunicação entre o backend e o banco de dados MySQL.
-- 🐳 **Docker**: Containerização do ambiente de desenvolvimento e produção.
 
 ## Como Funciona
 1. **Candidatos** podem se cadastrar, fazer login, visualizar vagas abertas e se candidatar diretamente às vagas de seu interesse.
@@ -40,10 +36,9 @@ O projeto foi desenvolvido com o objetivo de **facilitar a conexão entre profis
 ## Tecnologias e Metodologias Utilizadas
 - 🛠️ **Backend:** Node.js, Express, JWT
 - 🗃️ **Banco de Dados:** MySQL, Sequelize
-- 💻 **Frontend:** Reacte CSS
+- 💻 **Frontend:** CSS
 - 🔐 **Autenticação:** JWT (JSON Web Tokens)
 - 📂 **Versionamento:** Git, GitHub
-- 🐳 **Containerização:** Docker
 
 ---
 
