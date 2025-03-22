@@ -10,6 +10,7 @@ npm install express
 npm install multer
 npm install cors
 
+
 // Banco (Sequelize + MySQL)
 npm install --save sequelize  
 npm install --save mysql2  
@@ -26,3 +27,7 @@ npm install -g nodemon
 
 // Rodar o servidor com nodemon
 npx nodemon src/app.js
+
+// se da erro no bcrypt 
+npm uninstall bcrypt
+npm install bcrypt

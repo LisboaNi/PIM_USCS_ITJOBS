@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Vagas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../arrays.css">
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="logo">
+            IT Jobs
+        </div>
+        <div class="header-buttons">
+        <button onclick="window.location.href='http://localhost:3000/'" class="search-jobs">
+            <i class="fa fa-home"></i> Inicio
+        </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Buscar Vagas</h1>
+            
+            <!-- Caixa de busca -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Digite o título da vaga ou palavra-chave..."
+                    aria-label="Campo de busca por vagas"
+                >
+                <button onclick="buscarVagas()"><i class="fa fa-search"></i> Buscar</button>
+            </div>
+    
+            <!-- Tabela de resultados -->
+            <table id="inscricoes-table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Endereço:</th>
+                        <th>Tipo de Contrato</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="vaga-list">
+                    <!-- As vagas serão inseridas dinamicamente aqui -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+
+       <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./previa-vaga.js"></script>
+</body>
+</html>

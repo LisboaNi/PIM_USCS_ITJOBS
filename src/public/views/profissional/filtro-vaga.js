@@ -36,8 +36,11 @@ function exibirVagas(vagas) {
     vagaList.innerHTML = '<tr><td colspan="8">Nenhuma vaga aberta encontrada.</td></tr>';
   }
 
+  // Limitar o número de vagas a 10
+  const vagasLimite = vagas.slice(0, 10);
+
   // Adiciona as vagas à tabela
-  vagas.forEach(vaga => {
+  vagasLimite.forEach(vaga => {
     const vagaRow = document.createElement('tr');
 
     vagaRow.innerHTML = `

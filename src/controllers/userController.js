@@ -1,6 +1,7 @@
 const { User, TypeUser, UserProfissionalProfile, UserEmpresaProfile } = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Sequelize = require('sequelize');
 
 // Lógica de Criar Usuario
 const createUser = async (req, res) => {

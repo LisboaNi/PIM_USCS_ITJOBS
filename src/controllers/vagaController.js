@@ -43,7 +43,7 @@ const criarVaga = async (req, res) => {
             salario,
             tipo_contrato,
             nivel_experiencia,
-            empresa_id: empresaProfile.user_id,
+            empresa_id: empresaProfile.id,
             empresa_nome: empresaProfile.nome_completo  // Nome da empresa
         });
 
