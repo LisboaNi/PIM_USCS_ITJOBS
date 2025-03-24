@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.link_header_custom {
+  @apply hover:border-primary hover:text-primary hover:border-b-2 hover:font-bold;
+}
+
+.btn-animated {
+  @apply bg-primary text-text_primary relative overflow-hidden rounded-xl px-7 py-2 transition-all duration-300;
+}
+
+.btn-animated::before {
+  content: "";
+  @apply bg-secondary absolute inset-y-0 right-0 w-0 transition-all duration-300;
+}
+
+.btn-animated:hover::before {
+  @apply left-0 w-full;
+}
+
+.btn-animated span {
+  @apply relative z-10;
+}

@@ -1,35 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Bem-vindo ao PIM</title>
 
-    <link rel="stylesheet" href="index.css">
-
+    <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        IT Jobs
-      </div>
-      <button onclick="window.location.href='/views/vagas/previa-vaga.html'" class="search-jobs">
+    <!-- <header>
+      <div class="logo">IT Jobs</div>
+      <button
+        onclick="window.location.href='/views/vagas/previa-vaga.html'"
+        class="search-jobs"
+      >
         <i class="fa fa-search"></i> Pesquisa Vaga
-    </button>
+      </button>
+    </header> -->
+
+    <header class="p-8 shadow-md">
+      <nav class="mx-auto flex max-w-7xl items-center justify-around">
+        <div>
+          <h1 class="text-primary text-4xl font-bold">
+            IT.<span class="text-secondary text-3xl">{JOBS}</span>
+          </h1>
+        </div>
+        <ul class="flex items-center gap-6 text-lg">
+          <li class="link_header_custom">
+            <a href="#">Home</a>
+          </li>
+          <li class="link_header_custom"><a href="#">Sobre Nós</a></li>
+          <li class="link_header_custom"><a href="#">Assinaturas</a></li>
+        </ul>
+        <div class="flex items-center gap-5 text-lg">
+          <button class="btn-animated">
+            <span>Login</span>
+          </button>
+          <button><span>Cadastrar</span></button>
+        </div>
+      </nav>
     </header>
 
-    <main>
-    <div class="container">
-      <h1>Bem-vindo ao IT Jobs</h1>
-      <p>Cadastre-se para começar ou realize o login!</p>
-      <button id="register-btn">Cadastrar</button>
-      <button id="login-btn">Login</button>
-    </div>
-    </main>
+    <main class="max-h-screen">
+      <section
+        class="mx-auto flex min-h-screen max-w-[1400px] items-center gap-10"
+      >
+        <div class="text-primary leading-14 text-5xl font-bold">
+          <p class="">
+            Encontre os melhores talentos de
+            <span class="text-secondary uppercase leading-3">tecnologia</span>
+            do Brasil ou conquiste uma oportunidade nas maiores empresas do
+            país.
+          </p>
+          <p class="mt-5 text-xl/8 font-normal">
+            Conectamos profissionais qualificados a empresas inovadoras,
+            impulsionando carreiras e acelerando o crescimento do setor de TI.
+          </p>
+          <div>
+            <button class="btn-animated mt-5 text-base font-normal">
+              <span>Inscreva-se</span>
+            </button>
+          </div>
+        </div>
+        <img
+          src="./images/img-principal.avif"
+          alt="Ilustração de uma moça com seu computador em um sofá"
+          class="h-[450px] w-[450px]"
+        />
+      </section>
 
-    <footer>
-      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-    </footer>
+      <section class="mx-auto flex max-w-[1400px] items-center gap-10">
+        <img src="./images/img-sobre.avif" alt="" class="h-[500px] w-[500px]" />
+        <div class="flex flex-col items-center">
+          <h1 class="text-primary text-5xl font-bold">Sobre Nós</h1>
+          <p class="mt-3 text-justify text-xl">
+            A <span>ITJOBS</span> é a plataforma definitiva para conectar
+            talentos da tecnologia às melhores oportunidades do mercado. Nosso
+            objetivo é impulsionar carreiras e ajudar empresas a encontrar os
+            profissionais ideais para suas equipes.
+          </p>
+          <p class="mt-3 text-justify text-xl">
+            Com um sistema intuitivo e eficiente, facilitamos a busca por vagas
+            e talentos, garantindo conexões estratégicas no setor de TI. Seja
+            você um desenvolvedor em busca do próximo desafio ou uma empresa
+            procurando especialistas qualificados, a ITJOBS é o seu ponto de
+            encontro com o futuro da tecnologia.
+          </p>
+          <p class="mt-3 self-start text-justify text-xl">
+            Junte-se a nós e transforme sua carreira ou sua empresa com as
+            melhores oportunidades do Brasil!
+          </p>
+          <button class="btn-animated mt-10">
+            <span>Saiba mais</span>
+          </button>
+        </div>
+      </section>
+    </main>
 
     <!-- Link para a página de cadastro -->
     <script>
@@ -44,6 +116,5 @@
           window.location.href = "/views/login/login.html"; // Redireciona para a página de cadastro
         });
     </script>
-
   </body>
 </html>
