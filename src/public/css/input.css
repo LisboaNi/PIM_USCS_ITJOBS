@@ -4,19 +4,26 @@
 
 * {
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .link_header_custom {
-  @apply hover:border-primary hover:text-primary hover:border-b-2 hover:font-bold;
+  @apply hover:border-b-2 hover:border-primary hover:font-bold hover:text-primary;
 }
 
 .btn-animated {
-  @apply bg-primary text-text_primary relative overflow-hidden rounded-xl px-7 py-2 transition-all duration-300;
+  @apply relative overflow-hidden rounded-xl bg-primary px-7 py-2 text-text_primary transition-all duration-300;
 }
 
 .btn-animated::before {
   content: "";
-  @apply bg-secondary absolute inset-y-0 right-0 w-0 transition-all duration-300;
+  @apply absolute inset-y-0 right-0 w-0 bg-secondary transition-all duration-300;
 }
 
 .btn-animated:hover::before {
@@ -25,4 +32,16 @@
 
 .btn-animated span {
   @apply relative z-10;
+}
+
+.section-container {
+  @apply mx-auto flex w-max-container items-center gap-10 py-20;
+}
+
+.faq-question {
+  @apply w-full bg-primary px-6 py-4 text-left text-text_primary hover:bg-[#0A2472] focus:bg-[#0A2472] focus:outline-none;
+}
+
+.faq-answer {
+  @apply bg-[#0E6BA8] px-6 py-4 text-text_primary;
 }

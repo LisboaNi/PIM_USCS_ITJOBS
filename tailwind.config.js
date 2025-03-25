@@ -11,6 +11,9 @@ module.exports = {
         secondary: "#0E6BA8",
         text_primary: "#FFFFFF",
       },
+      width: {
+        "max-container": "1400px",
+      },
     },
   },
   plugins: [],
