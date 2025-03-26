@@ -133,7 +133,29 @@ const getUserProfile = async (req, res) => {
         {
           model: UserProfissionalProfile,
           required: false, // Um usuário pode não ter um perfil profissional
-          attributes: ['id', 'nome_completo', 'data_nascimento', 'localizacao', 'contato', 'especializacao', 'resumo', 'avatar', 'redes_sociais', 'link_curriculo']
+          attributes: [
+            'id'
+            , 'nome_completo'
+            , 'data_nascimento'
+            , 'nacionalidade'
+            , 'contato'
+            , 'endereco-rua'
+            , 'endereco-cep'
+            , 'endereco-cidade'
+            , 'endereco-bairro'
+            , 'descricao'
+            , 'estado_civil'
+            , 'identidade_genero'
+            , 'orientacao_sexual'
+            , 'raca_etnia'
+            , 'deficiencia'
+            , 'github'
+            , 'website'
+            , 'portfolio'
+            , 'link_curriculo'
+            , 'resumo'
+            , 'avatar'  
+          ]
         },
         {
           model: UserEmpresaProfile,
@@ -168,7 +190,25 @@ const getUserProfile = async (req, res) => {
 
 // Lógica para editar perfil do usuário
 const editUserProfile = async (req, res) => {
-  const { nome_completo, resumo, localizacao, contato, redes_sociais, avatar, data_nascimento, especializacao, link_curriculo } = req.body;
+  const { 
+    nome_completo, 
+    resumo, 
+    localizacao, 
+    contato, 
+    redes_sociais, 
+    avatar, 
+    data_nascimento, 
+    especializacao, 
+    link_curriculo, 
+    estado_civil, 
+    identidade_genero, 
+    orientacao_sexual, 
+    raca_etnia, 
+    deficiencia, 
+    github, 
+    website, 
+    portfolio 
+  } = req.body;
 
   try {
     // Verificar se o token foi passado na requisição
@@ -196,13 +236,20 @@ const editUserProfile = async (req, res) => {
         await userProfissionalProfile.update({
           nome_completo,
           resumo,
-          localizacao,
+          nacionalidade,
           contato,
-          redes_sociais: redes_sociais ? JSON.stringify(redes_sociais) : null,
           avatar,
           data_nascimento: data_nascimento || userProfissionalProfile.data_nascimento, // Verifica se data de nascimento foi enviada
           especializacao: especializacao || userProfissionalProfile.especializacao,  // Verifica se especialização foi enviada
           link_curriculo: link_curriculo || userProfissionalProfile.link_curriculo,  // Verifica se link do currículo foi enviado
+          estado_civil: estado_civil || userProfissionalProfile.estado_civil, // Atualiza estado civil se fornecido
+          identidade_genero: identidade_genero || userProfissionalProfile.identidade_genero, // Atualiza identidade de gênero se fornecido
+          orientacao_sexual: orientacao_sexual || userProfissionalProfile.orientacao_sexual, // Atualiza orientação sexual se fornecido
+          raca_etnia: raca_etnia || userProfissionalProfile.raca_etnia, // Atualiza raça/etnia se fornecido
+          deficiencia: deficiencia !== undefined ? deficiencia : userProfissionalProfile.deficiencia, // Verifica se deficiência foi enviada (boolean)
+          github,
+          website,
+          portfolio
         });
         return res.status(200).json({ message: 'Perfil profissional atualizado com sucesso!' });
       } else {
@@ -217,8 +264,11 @@ const editUserProfile = async (req, res) => {
           resumo,
           localizacao,
           contato,
-          redes_sociais: redes_sociais ? JSON.stringify(redes_sociais) : null,
+          redes_sociais: redes_sociais ? JSON.stringify(redes_sociais) : null, // Serializa redes sociais se fornecidas
           avatar,
+          github,
+          website,
+          portfolio
         });
         return res.status(200).json({ message: 'Perfil de empresa atualizado com sucesso!' });
       } else {
@@ -232,6 +282,7 @@ const editUserProfile = async (req, res) => {
     return res.status(500).json({ message: 'Erro ao atualizar perfil.' });
   }
 };
+
 
 // Lógica para exclusão lógica de usuário
 const deleteUser = async (req, res) => {
