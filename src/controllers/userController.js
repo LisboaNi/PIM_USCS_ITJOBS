@@ -15,10 +15,10 @@ const createUser = async (req, res) => {
     }
     console.log('Campos obrigatórios verificados com sucesso.');
 
-    const existingUser = await User.findOne({ where: { email } });
-    if (existingUser) {
-      return res.status(400).json({ message: 'E-mail já cadastrado.' });
-    }
+    // const existingUser = await User.findOne({ where: { email } });
+    // if (existingUser) {
+    //   return res.status(400).json({ message: 'E-mail já cadastrado.' });
+    // }
 
     // Criptografar a senha
     const hashedPassword = await bcrypt.hash(password, 10);
