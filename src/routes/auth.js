@@ -31,7 +31,7 @@ router.post('/forgot-password', async (req, res) => {
         // Gerar token JWT válido por 15 minutos
         const token = jwt.sign({ id: user.id }, SECRET_RESET, { expiresIn: '15m' });
 
-        const resetLink = `http://localhost:3000/reset-password?token=${token}`;
+        const resetLink = `http://localhost:3000/views/reset/reset-password?token=${token}`;
 
         // Enviar e-mail com o link de redefinição
         await transporter.sendMail({
