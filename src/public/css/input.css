@@ -34,6 +34,10 @@ html {
   @apply relative z-10;
 }
 
+.btn-animated i {
+  @apply relative z-10;
+}
+
 .section-container {
   @apply mx-auto flex w-max-container items-center gap-10 py-20;
 }
@@ -48,4 +52,16 @@ html {
 
 .input {
   @apply w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472];
+}
+
+.input-edit {
+  @apply rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472];
+}
+
+.div-edit {
+  @apply flex flex-col;
+}
+
+.div-edit strong {
+  @apply ml-2;
 }

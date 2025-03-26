@@ -1,91 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil Editável - Profissional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../perfil.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/output.css" />
+  </head>
+  <body>
     <!-- Cabeçalho da página -->
-    <header>
-        <div class="logo">
-            IT Jobs
+    <header class="fixed left-0 top-0 w-full bg-white p-5 shadow-md">
+      <nav class="flex items-center justify-between">
+        <div>
+          <a
+            href="/src/public/index.html"
+            class="border-none text-4xl font-bold text-primary"
+          >
+            IT.<span class="text-3xl text-secondary">{JOBS}</span>
+          </a>
         </div>
-        <div class="header-buttons">
-        <button onclick="window.location.href='./filtro-vaga.html'" class="search-jobs">
-            <i class="fa fa-search"></i> Pesquisa Vaga
-        </button>
-        <button onclick="window.location.href='./historico-inscricoes.html'" class="search-jobs">
-            <i class="fa fa-history"></i> Histórico
-        </button>
+        <div class="flex items-center">
+          <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
+            <li class="link_header_custom"><a href="#">Meu Feed</a></li>
+            <li class="link_header_custom"><a href="#">Organizações</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
+            </li>
+          </ul>
+
+          <div class="ml-6 flex items-center gap-2">
+            <img
+              id="userAvatar"
+              src="../../images/joao.avif"
+              alt="Avatar"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+            <h1>
+              <span id="userName" class="text-xl font-bold">João Almeida</span>
+            </h1>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
         </div>
+      </nav>
     </header>
 
-    <!-- Corpo da página (Main) -->
-    <main>
-        <!-- Área para mensagens de sucesso ou erro -->
-        <div id="message" class="message" style="display: none;"></div>
-        
-        <div id="profileInfo">
-            <h1>Editar Perfil</h1>
+    <main class="my-10 flex h-screen w-full items-center justify-center">
+      <!-- Área para mensagens de sucesso ou erro -->
+      <div id="message" class="message" style="display: none"></div>
 
-            <div class="form-group">
-                <img id="userAvatar" alt="Avatar">
-                <div class="form-field">
-                    <br>
-                    <input type="file" id="fileInput" accept="image/*">
-                </div>
-            </div>
+      <section class="mx-auto w-[800px] rounded-xl px-14 py-10 shadow-md">
+        <h1 class="mb-5 ml-2 text-xl font-bold text-[#0E6BA8]">
+          Editar Perfil
+        </h1>
+        <div id="profileInfo" class="mx-auto grid grid-cols-2 gap-5">
+          <p class="div-edit">
+            <strong>Nome:</strong
+            ><input type="text" id="userName" class="input-edit" />
+          </p>
 
-            <div class="form-group">
-                <div class="form-field">
-                <p><strong>Nome:</strong><input type="text" id="userName" class="editable"></p>
-                </div>
-                <div class="form-field">
-                <p><strong>Data de Nascimento:</strong><input type="date" id="userDataNascimento" class="editable"></p>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-field">
-                    <p><strong>Email:</strong><input type="text" id="userEmail" class="editable"></p>                
-                </div>
-                <div class="form-field">
-                    <p><strong>Contato:</strong><input type="text" id="userContato" class="editable"></p>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-field">
-                    <p><strong>Currículo:</strong><input type="text" id="userLinkCurriculo" class="editable"></p>
-                </div>
-                <div class="form-field">            
-                    <p><strong>Endereço:</strong><input type="text" id="userLocalizacao" class="editable"></p>
-                </div>
-            </div>
+          <p class="div-edit">
+            <strong>Data de Nascimento:</strong
+            ><input type="date" id="userDataNascimento" class="input-edit" />
+          </p>
 
-            <p><strong>Resumo:</strong><textarea id="userResumo" class="editable"></textarea></p>
-            <p><strong>Especialização:</strong><textarea id="userEspecializacao" class="editable"></textarea></p>
-           <!-- <p><strong>Redes Sociais:</strong><textarea id="userRedesSociais" class="editable" placeholder="Adicione os links das redes sociais aqui (exemplo: facebook.com, linkedin.com)"></textarea></p>-->
+          <p class="div-edit">
+            <strong>Nacionalidade:</strong
+            ><input type="text" id="userNacionalidade" class="input-edit" />
+          </p>
 
-            <div id="actionButtons">
-                <button id="saveButton">
-                    <i class="fa fa-save"></i> Salvar
-                </button>
-                <button id="cancelButton" onclick="window.location.href='perfil-profissional.html'">
-                    <i class="fa fa-times"></i> Cancelar
-                </button>
-            </div>
+          <p class="div-edit">
+            <strong>Estado Civil:</strong
+            ><select id="userEstadoCivil" class="input-edit">
+              <option value="">Selecione</option>
+              <option value="1">Solteiro(a)</option>
+              <option value="2">Casado(a)</option>
+              <option value="3">Divotciado(a)</option>
+              <option value="4">Viúvo(a)</option>
+              <option value="5">Separado(a) Judicialmente</option>
+            </select>
+          </p>
+
+          <p class="div-edit">
+            <strong>Identidade de Genêro:</strong
+            ><select id="userIdentidade" class="input-edit">
+              <option value="">Selecione</option>
+              <option value="1">Homem Cis</option>
+              <option value="2">Mulher Cis</option>
+              <option value="3">Homem Trans</option>
+              <option value="4">Mulher Trans</option>
+              <option value="5">Intersexo</option>
+              <option value="6">Agênero</option>
+              <option value="7">Não Binario</option>
+              <option value="8">Outro</option>
+              <option value="9">Prefiro Não Responder</option>
+            </select>
+          </p>
+
+          <p class="div-edit">
+            <strong>Orientação Sexual:</strong
+            ><select id="userOrientacao" class="input-edit">
+              <option value="">Selecione</option>
+              <option value="1">Assexual</option>
+              <option value="2">Bissexual</option>
+              <option value="3">Heterossexual</option>
+              <option value="4">Homossexual</option>
+              <option value="5">Pansexual</option>
+              <option value="6">Outro</option>
+              <option value="7">Prefiro Não Responder</option>
+            </select>
+          </p>
+
+          <p class="div-edit">
+            <strong>Raça/Etnia:</strong
+            ><select id="userOrientacao" class="input-edit">
+              <option value="">Selecione</option>
+              <option value="1">Asíatica</option>
+              <option value="2">Branca</option>
+              <option value="3">Indígena</option>
+              <option value="4">Mestiço</option>
+              <option value="5">Negra</option>
+              <option value="6">Pardo</option>
+            </select>
+          </p>
+
+          <p class="div-edit">
+            <strong>CPF:</strong
+            ><input type="text" id="userCpf" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Email:</strong
+            ><input type="text" id="userEmail" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Contato:</strong
+            ><input type="text" id="userContato" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Currículo:</strong
+            ><input type="text" id="userLinkCurriculo" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>CEP:</strong
+            ><input type="text" id="userCep" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Rua:</strong
+            ><input type="text" id="userRua" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Bairro:</strong
+            ><input type="text" id="userBairro" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Cidade:</strong
+            ><input type="text" id="userCidade" class="input-edit" />
+          </p>
+
+          <p class="div-edit">
+            <strong>Deficiência:</strong
+            ><select id="userDef" class="input-edit">
+              <option value="">Selecione</option>
+              <option value="1">Sim</option>
+              <option value="2">Nao</option>
+            </select>
+          </p>
+
+          <p class="div-edit col-span-2">
+            <strong>Resumo:</strong
+            ><textarea id="userResumo" class="input-edit"></textarea>
+          </p>
+
+          <div id="actionButtons" class="col-span-2 flex justify-around">
+            <button
+              id="saveButton"
+              class="btn-animated flex items-center gap-5"
+            >
+              <i class="fa fa-save"></i><span>Salvar</span>
+            </button>
+            <button
+              id="cancelButton"
+              onclick="window.location.href='perfil-profissional.html'"
+              class="btn-animated flex items-center gap-5"
+            >
+              <i class="fa fa-times"></i><span>Cancelar</span>
+            </button>
+          </div>
         </div>
+      </section>
     </main>
 
-    <!-- Rodapé da página -->
-    <footer>
-        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="./perfil-profissional-editavel.js"></script>
-</body>
+    <!-- <script src="./perfil-profissional-editavel.js"></script> -->
+  </body>
 </html>
-

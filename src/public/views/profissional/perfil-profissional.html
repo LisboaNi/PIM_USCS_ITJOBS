@@ -23,7 +23,7 @@
         <div>
           <a
             href="/src/public/index.html"
-            class="text-4xl font-bold text-primary"
+            class="border-none text-4xl font-bold text-primary"
           >
             IT.<span class="text-3xl text-secondary">{JOBS}</span>
           </a>
@@ -55,7 +55,7 @@
 
     <div class="flex">
       <aside
-        class="flex h-screen w-auto flex-col items-center bg-[#0E6BA8] px-5 py-48 text-text_primary"
+        class="flex h-screen w-auto flex-col items-center bg-[#001C55] px-5 py-48 text-text_primary"
       >
         <div>
           <div class="flex flex-col items-center gap-1">
@@ -89,41 +89,157 @@
         </div>
       </aside>
 
-      <main>
+      <main class="w-full bg-gray-200 p-2">
         <div id="message" class="message hidden"></div>
-
-        <div id="profileInfo">
-          <p>
-            <strong>Data de Nascimento:</strong>
-            <span id="userDataNascimento"></span>
-          </p>
-          <p><strong>Email:</strong> <span id="userEmail"></span></p>
-          <p><strong>Contato:</strong> <span id="userContato"></span></p>
-          <p>
-            <strong>Currículo:</strong> <span id="userLinkCurriculo"></span>
-          </p>
-          <p><strong>Endereço:</strong> <span id="userLocalizacao"></span></p>
-          <br />
-          <p><strong>Resumo:</strong> <span id="userResumo"></span></p>
-          <p>
-            <strong>Especialização:</strong>
-            <span id="userEspecializacao"></span>
-          </p>
-          <!--<p><strong>Redes Sociais:</strong> <span id="userRedesSociais"></span></p>-->
-
-          <div id="actionButtons">
-            <button id="logoutButton">Desconectar</button>
+        <section
+          class="grid w-full grid-cols-3 grid-rows-[repeat(3,minmax(50px,1fr))] rounded-xl bg-white px-14 py-5"
+        >
+          <div
+            class="col-span-4 row-start-1 row-end-2 flex h-28 items-center justify-between"
+          >
+            <h1 class="text-xl text-[#0E6BA8]">Dados Pessoais</h1>
             <button
-              onclick="window.location.href='perfil-profissional-editavel.html'"
-              class="search-jobs"
+              onclick="window.location.href = 'perfil-profissional-editavel.html'"
+              class="btn-animated"
             >
-              Editar
+              <span>Editar</span>
             </button>
           </div>
-        </div>
+
+          <div class="col-start-1 col-end-2 row-start-2 row-end-4 text-primary">
+            <h2 class="text-lg font-bold">Dados Pessoais</h2>
+            <div class="mt-4 flex flex-col gap-4">
+              <p>
+                <strong>Nome: </strong
+                ><span id="userName">Vinicius Silva de Jesus</span>
+              </p>
+              <p>
+                <strong>Data de Nascimento: </strong
+                ><span id="userDataNascimento">19/09/2003</span>
+              </p>
+              <p>
+                <strong>Nacionalidade: </strong
+                ><span id="userNacionalidade">Brasil</span>
+              </p>
+              <p>
+                <strong>CPF: </strong><span id="userCpf">470.011.638-21</span>
+              </p>
+              <p>
+                <strong>Estado Civil: </strong
+                ><span id="userEstadoCivil">Solteiro(a)</span>
+              </p>
+              <p>
+                <strong>Identidade de Genêro: </strong
+                ><span id="userIdentidade">Homem Cisgênero</span>
+              </p>
+              <p>
+                <strong>Orientação sexual: </strong
+                ><span id="userOrientacao">Heterossexual</span>
+              </p>
+              <p>
+                <strong>Raça/Etnia: </strong><span id="userRaca">Branca</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-start-3 col-end-4">
+            <p>
+              <span id="userResumo"
+                >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+                corrupti similique fuga a cupiditate. Repellat, eligendi?
+                Aliquid, laborum veniam nesciunt, laboriosam, sunt cumque
+                quibusdam asperiores libero deserunt praesentium blanditiis
+                officia!</span
+              >
+            </p>
+          </div>
+          <div class="col-start-3 col-end-4">
+            <h2 class="font-bold text-primary">Endereço</h2>
+            <p><strong>CEP: </strong><span>09440-220</span></p>
+            <p><strong>Rua: </strong><span>Rua Lambari, 76</span></p>
+            <p><strong>Bairro: </strong><span>Pouso Alegre</span></p>
+            <p><strong>Cidade: </strong><span>Ribeirão Pires - SP</span></p>
+          </div>
+          <div class="col-start-3 col-end-4">
+            <h2 class="flex items-center gap-2 font-bold text-primary">
+              <span>Deficiências</span><i class="fa-solid fa-wheelchair"></i>
+            </h2>
+            <p><span>Nenhuma</span></p>
+          </div>
+        </section>
       </main>
     </div>
+
+    <footer class="bg-primary py-10 text-text_primary">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Seção 1: Logo e descrição -->
+          <div>
+            <h2 class="mb-4 text-3xl font-semibold">IT JOBS</h2>
+            <p class="text-gray-400">
+              A plataforma definitiva para encontrar oportunidades no mercado de
+              TI. Conecte-se com as melhores empresas e avance em sua carreira.
+            </p>
+          </div>
+
+          <!-- Seção 2: Links rápidos -->
+          <div>
+            <h3 class="mb-4 text-lg font-semibold">Links Rápidos</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-[#A6E1FA]">Home</a></li>
+              <li><a href="#" class="hover:text-[#A6E1FA]">Sobre Nós</a></li>
+              <li><a href="#" class="hover:text-[#A6E1FA]">Assinaturas</a></li>
+              <li><a href="#" class="hover:text-[#A6E1FA]">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Seção 3: Redes sociais -->
+          <div>
+            <h3 class="mb-4 text-lg font-semibold">Siga-nos</h3>
+            <div class="flex space-x-6">
+              <a href="#" class="hover:text-[#A6E1FA]"
+                ><i class="fab fa-facebook-f"></i> Facebook</a
+              >
+              <a href="#" class="hover:text-[#A6E1FA]"
+                ><i class="fab fa-twitter"></i> Twitter</a
+              >
+              <a href="#" class="hover:text-[#A6E1FA]"
+                ><i class="fab fa-linkedin-in"></i> LinkedIn</a
+              >
+              <a href="#" class="hover:text-[#A6E1FA]"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </div>
+          </div>
+
+          <!-- Seção 4: Contato -->
+          <div>
+            <h3 class="mb-4 text-lg font-semibold">Contato</h3>
+            <p class="text-gray-400">
+              Email:
+              <a href="mailto:contato@itjobs.com" class="hover:text-[#A6E1FA]"
+                >contato@itjobs.com</a
+              >
+            </p>
+            <p class="text-gray-400">
+              Telefone:
+              <a href="tel:+5511987654321" class="hover:text-[#A6E1FA]"
+                >+55 11 98765-4321</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+          <p class="text-gray-400">
+            © 2025 IT JOBS. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- <script src="./perfil-profissional.js"></script> -->
   </body>
 </html>
+
+<!-- <button id="logoutButton">Desconectar</button> -->
