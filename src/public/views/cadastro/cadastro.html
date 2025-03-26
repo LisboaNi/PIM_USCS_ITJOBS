@@ -1,46 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Cadastro de Usuário</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="../index.css" />
-  <link rel="stylesheet" href="cadastro.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Usuário</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/output.css" />
+  </head>
+  <body class="flex h-screen flex-col items-center justify-center bg-gray-100">
+    <main
+      class="flex min-h-screen w-[600px] flex-col items-center justify-center p-4"
+    >
+      <a
+        href="/src/public/index.html"
+        class="mb-16 text-6xl font-bold text-primary"
+      >
+        IT.<span class="text-5xl text-secondary">{JOBS}</span>
+      </a>
+      <div class="w-full rounded-xl bg-white p-8 shadow-lg">
+        <h2 class="mb-6 text-center text-4xl font-bold text-primary">
+          Cadastrar-se
+        </h2>
+        <form id="registerForm" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Nome"
+            required
+            class="input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="input"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            required
+            class="input"
+          />
+          <input
+            type="text"
+            name="cpf_cnpj"
+            placeholder="CPF/CNPJ"
+            required
+            class="input"
+          />
+          <select name="type_user_id" class="input">
+            <option value="3">Profissional</option>
+            <option value="2">Empresa</option>
+          </select>
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-primary py-2.5 font-medium text-white transition-colors hover:bg-secondary"
+          >
+            Cadastrar-se
+          </button>
+        </form>
+      </div>
+    </main>
 
-</head>
-<body>
-  <header>
-    <div class="logo">
-      IT Jobs
-    </div>
-    <div class="header-buttons">
-    <button onclick="window.location.href='../login/login.html'" class="search-jobs">
-      <i class="fa fa-user"></i> Login
-  </button>
-    </div>
-  </header>
-  
-  <main>
-  <div class="container">
-  <h1>Cadastro de Usuário</h1> 
-  <form id="registerForm">
-    <input type="text" name="name" placeholder="Nome" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="password" name="password" placeholder="Senha" required />
-    <input type="text" name="cpf_cnpj" placeholder="CPF/CNPJ" required />
-    <select name="type_user_id">
-      <option value="3">Profissional</option>
-      <option value="2">Empresa</option>
-    </select>
-    <button type="submit">Registrar</button>
-  </form>
-</div>
-</main>
-<footer>
-  <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-</footer>
-
-  <script src="./cadastro.js"></script>
-  
-</body>
+    <script src="./cadastro.js"></script>
+  </body>
 </html>

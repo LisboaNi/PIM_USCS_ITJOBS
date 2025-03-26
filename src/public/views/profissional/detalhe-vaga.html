@@ -1,60 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes da Vaga</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../perfil.css">
-</head>
-<body>
-        <!-- Cabeçalho da página -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Cabeçalho da página -->
     <header>
-          <div class="logo">
-              IT Jobs
-          </div>
-          <div class="header-buttons">
-          <button onclick="window.location.href='./filtro-vaga.html'" class="search-jobs">
-            <i class="fa fa-search"></i> Pesquisa Vaga
+      <div class="logo">IT Jobs</div>
+      <div class="header-buttons">
+        <button
+          onclick="window.location.href='./filtro-vaga.html'"
+          class="search-jobs"
+        >
+          <i class="fa fa-search"></i> Pesquisa Vaga
         </button>
-        <button onclick="window.location.href='./historico-inscricoes.html'" class="search-jobs">
-            <i class="fa fa-history"></i> Histórico
+        <button
+          onclick="window.location.href='./historico-inscricoes.html'"
+          class="search-jobs"
+        >
+          <i class="fa fa-history"></i> Histórico
         </button>
-        <button onclick="window.location.href='./perfil-profissional.html'" class="search-jobs">
+        <button
+          onclick="window.location.href='./perfil-profissional.html'"
+          class="search-jobs"
+        >
           <i class="fa fa-user"></i> Perfil
-      </button>
+        </button>
       </div>
-      </header>
-      <main>
-    <div id="profileInfo">
-        <h1><strong>Vaga:</strong> <span id="titulo"></span></h1> 
-        <br>
+    </header>
+    <main>
+      <div id="profileInfo">
+        <h1><strong>Vaga:</strong> <span id="titulo"></span></h1>
+        <br />
         <p><strong>Status:</strong> <span id="status"></span></p>
-        <br>
+        <br />
         <p><strong>Salário:</strong> <span id="salario"></span></p>
         <p><strong>Endereço:</strong> <span id="localizacao"></span></p>
-        <p><strong>Tipo de Contrato:</strong> <span id="tipo_contrato"></span></p>
-        <p><strong>Nível de Experiência:</strong> <span id="nivel_experiencia"></span></p>
-        <br>
+        <p>
+          <strong>Tipo de Contrato:</strong> <span id="tipo_contrato"></span>
+        </p>
+        <p>
+          <strong>Nível de Experiência:</strong>
+          <span id="nivel_experiencia"></span>
+        </p>
+        <br />
         <p><strong>Descrição:</strong> <span id="descricao"></span></p>
 
-
         <div id="actionButtons">
-            <a href="javascript:history.back()" id="btn-voltar">
-                <i class="fa fa-arrow-left"></i> Voltar
-            </a>
-        </div>  
+          <a href="javascript:history.back()" id="btn-voltar">
+            <i class="fa fa-arrow-left"></i> Voltar
+          </a>
+        </div>
+      </div>
+    </main>
 
-    </div>
-</main>
-
- <!-- Rodapé da página -->
- <footer>
-    <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-</footer>
+    <!-- Rodapé da página -->
+    <footer>
+      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="./detalhe-vaga.js"></script>
-</body>
+  </body>
 </html>

@@ -45,3 +45,7 @@ html {
 .faq-answer {
   @apply bg-[#0E6BA8] px-6 py-4 text-text_primary;
 }
+
+.input {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472];
+}

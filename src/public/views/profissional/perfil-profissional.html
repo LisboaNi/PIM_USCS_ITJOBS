@@ -1,68 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../perfil.css">
-    <link rel="stylesheet" href="../index.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/output.css" />
+  </head>
+  <body>
     <!-- Cabeçalho da página -->
-    <header>
-        <div class="logo">
-            IT Jobs
+    <header class="bg-white p-7 shadow-md">
+      <nav class="flex items-center justify-between">
+        <div>
+          <a
+            href="/src/public/index.html"
+            class="text-4xl font-bold text-primary"
+          >
+            IT.<span class="text-3xl text-secondary">{JOBS}</span>
+          </a>
         </div>
-        <div class="header-buttons">
-        <button onclick="window.location.href='./filtro-vaga.html'" class="search-jobs">
-            <i class="fa fa-search"></i> Pesquisa Vaga
-        </button>
-        <button onclick="window.location.href='./historico-inscricoes.html'" class="search-jobs">
-            <i class="fa fa-history"></i> Histórico
-        </button>
+        <div class="flex items-center">
+          <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
+            <li class="link_header_custom"><a href="#">Meu Feed</a></li>
+            <li class="link_header_custom"><a href="#">Organizações</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
+            </li>
+          </ul>
+
+          <div class="ml-6 flex items-center gap-2">
+            <img
+              id="userAvatar"
+              src="../../images/joao.avif"
+              alt="Avatar"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+            <h1>
+              <span id="userName" class="text-xl font-bold">João Almeida</span>
+            </h1>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
         </div>
+      </nav>
     </header>
 
-    <!-- Corpo da página (Main) -->
-    <main>
-        <div id="message" class="message" style="display: none;"></div>
+    <div class="flex">
+      <aside
+        class="flex h-screen w-auto flex-col items-center bg-[#0E6BA8] px-5 py-48 text-text_primary"
+      >
+        <div>
+          <div class="flex flex-col items-center gap-1">
+            <img
+              id="userAvatar"
+              src="../../images/joao.avif"
+              alt="Avatar"
+              class="mb-4 h-40 w-40 rounded-full object-cover"
+            />
+            <h1>
+              <span id="userName" class="text-xl font-bold">João Almeida</span>
+            </h1>
+          </div>
+        </div>
+        <div>
+          <h2 class="mt-20">Contato</h2>
+          <div class="ml-3 mt-2 flex flex-col gap-3">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope"></i>
+              <span id="userEmail">vini.jesus1342@gmail.com</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-mobile"></i>
+              <span id="userContato">(11)99943-1171</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="userLocalizacao">Rua Lambari, 76 - Pouso Alegre</span>
+            </p>
+          </div>
+        </div>
+      </aside>
 
-        <div id="profileInfo"> 
-            <div class="header-flex">
-                <img id="userAvatar" alt="Avatar">
-                <h1><span id="userName"></span></h1>
-            </div> 
-            <br>
-            <p><strong>Data de Nascimento:</strong> <span id="userDataNascimento"></span></p>
-            <p><strong>Email:</strong> <span id="userEmail"></span></p>
-            <p><strong>Contato:</strong> <span id="userContato"></span></p>
-            <p><strong>Currículo:</strong> <span id="userLinkCurriculo"></span></p>
-            <p><strong>Endereço:</strong> <span id="userLocalizacao"></span></p>
-            <br>
-            <p><strong>Resumo:</strong> <span id="userResumo"></span></p>
-            <p><strong>Especialização:</strong> <span id="userEspecializacao"></span></p>
+      <main>
+        <div id="message" class="message hidden"></div>
+
+        <div id="profileInfo">
+          <p>
+            <strong>Data de Nascimento:</strong>
+            <span id="userDataNascimento"></span>
+          </p>
+          <p><strong>Email:</strong> <span id="userEmail"></span></p>
+          <p><strong>Contato:</strong> <span id="userContato"></span></p>
+          <p>
+            <strong>Currículo:</strong> <span id="userLinkCurriculo"></span>
+          </p>
+          <p><strong>Endereço:</strong> <span id="userLocalizacao"></span></p>
+          <br />
+          <p><strong>Resumo:</strong> <span id="userResumo"></span></p>
+          <p>
+            <strong>Especialização:</strong>
+            <span id="userEspecializacao"></span>
+          </p>
           <!--<p><strong>Redes Sociais:</strong> <span id="userRedesSociais"></span></p>-->
 
           <div id="actionButtons">
-            <button id="logoutButton">
-                <i class="fa fa-sign-out"></i> Desconectar
-            </button>                
-            <button onclick="window.location.href='perfil-profissional-editavel.html'" class="search-jobs">
-                <i class="fa fa-pencil"></i> Editar
+            <button id="logoutButton">Desconectar</button>
+            <button
+              onclick="window.location.href='perfil-profissional-editavel.html'"
+              class="search-jobs"
+            >
+              Editar
             </button>
-            </div>  
-        </div>        
-    </main>
+          </div>
+        </div>
+      </main>
+    </div>
 
-    <!-- Rodapé da página -->
-    <footer>
-        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="./perfil-profissional.js"></script>
-
-
-</body>
+    <!-- <script src="./perfil-profissional.js"></script> -->
+  </body>
 </html>
