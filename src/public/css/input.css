@@ -23,7 +23,7 @@ html {
 
 .btn-animated::before {
   content: "";
-  @apply absolute inset-y-0 right-0 w-0 bg-secondary transition-all duration-300;
+  @apply absolute inset-y-0 right-0 w-0 bg-secondary transition-all duration-500;
 }
 
 .btn-animated:hover::before {
@@ -64,4 +64,36 @@ html {
 
 .div-edit strong {
   @apply ml-2;
+}
+
+.bg {
+  background-color: #ff0000;
+
+  &:hover {
+    background-color: #b30404;
+  }
+}
+
+.bgd {
+  background-color: #38b000;
+
+  &:hover {
+    background-color: #267700;
+  }
+}
+
+.btn-candidatar {
+  @apply flex w-full items-center justify-center gap-3 rounded-lg bg-[#A6E1FA] px-2 py-2 text-[#0A2472] transition-all duration-300 hover:bg-[#0E6BA8] hover:text-text_primary;
+}
+
+.btn-detalhes {
+  @apply flex w-full items-center justify-center gap-3 rounded-lg bg-[#0E6BA8] px-2 py-2 text-white transition-all duration-300 hover:bg-[#001C55];
+}
+
+.td_tbody_table {
+  @apply border-2 border-primary text-center text-xl text-primary;
+}
+
+.th_thead_table {
+  @apply border-primary px-6 py-3 transition-all duration-300 hover:bg-primary;
 }
