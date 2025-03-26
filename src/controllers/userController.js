@@ -15,6 +15,11 @@ const createUser = async (req, res) => {
     }
     console.log('Campos obrigatórios verificados com sucesso.');
 
+    // const existingUser = await User.findOne({ where: { email } });
+    // if (existingUser) {
+    //   return res.status(400).json({ message: 'E-mail já cadastrado.' });
+    // }
+
     // Criptografar a senha
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log('Senha criptografada com sucesso.');
@@ -228,10 +233,29 @@ const editUserProfile = async (req, res) => {
   }
 };
 
+// Lógica para exclusão lógica de usuário
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const user = await User.findOne({ where: { id, deleted_at: null } });
+    if (!user) {
+      return res.status(404).json({ message: 'Usuário não encontrado.' });
+    }
+
+    await user.update({ deleted_at: new Date() });
+    await user.save();
+
+    res.status(200).json({ message: 'Usuário excluído com sucesso.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao excluir usuário', error: error.message });
+  }
+};
 
 module.exports = {
   createUser,
   loginUser,
   getUserProfile,
-  editUserProfile
+  editUserProfile,
+  deleteUser
 };
