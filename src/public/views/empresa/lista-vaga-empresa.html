@@ -1,54 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Vagas da Empresa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../arrays.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-          IT Jobs
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/output.css" />
+  </head>
+  <body>
+    <header class="w-full bg-white p-4 shadow-md">
+      <nav class="flex items-center justify-between">
+        <div>
+          <a
+            href="/src/public/index.html"
+            class="border-none text-4xl font-bold text-primary"
+          >
+            IT.<span class="text-3xl text-secondary">{JOBS}</span>
+          </a>
         </div>
-        <div class="header-buttons">
-        <button onclick="window.location.href='./criar-vaga.html'" class="search-jobs">
-          <i class="fa fa-plus"></i> Criar Vaga
-        </button>
-      <button onclick="window.location.href='./perfil-empresa.html'" class="search-jobs">
-          <i class="fa fa-user"></i> Perfil
-      </button>
-    </div>
-      </header>
-    <main>
-    <div class="container">
-        <h1>Lista de Vagas</h1>
-        <table id="inscricoes-table">
+        <div class="flex items-center">
+          <div class="ml-6 flex items-center gap-2">
+            <img
+              id="userAvatar"
+              src="../../images/joao.avif"
+              alt="Avatar"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+            <h1>
+              <span id="userName" class="text-xl font-bold">João Almeida</span>
+            </h1>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex min-h-screen justify-center bg-gray-100 py-10">
+      <div class="container max-w-[1000px] rounded-2xl bg-white p-6 shadow-lg">
+        <h1 class="mb-6 text-center text-4xl font-bold text-primary">
+          Lista de Vagas
+        </h1>
+        <div class="overflow-x-auto">
+          <table
+            id="inscricoes-table"
+            class="w-full rounded-lg border-2 border-primary shadow-md"
+          >
             <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Endereço</th>
-                    <th>Salário</th>
-                    <th>Tipo</th>
-                    <th>Nível</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
+              <tr class="bg-[#0E6BA8] text-center text-white">
+                <th class="th_thead_table">Título</th>
+                <th class="th_thead_table">Endereço</th>
+                <th class="th_thead_table">Salário</th>
+                <th class="th_thead_table">Tipo</th>
+                <th class="th_thead_table">Nível</th>
+                <th class="th_thead_table">Status</th>
+                <th class="th_thead_table">Ações</th>
+              </tr>
             </thead>
             <tbody id="vaga-list">
-                <!-- As vagas serão inseridas aqui -->
+              <!-- As vagas serão inseridas aqui -->
             </tbody>
-        </table>
-    </div>
-</main>
-
-<footer>
-    <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-  </footer>
+          </table>
+        </div>
+      </div>
+    </main>
 
     <script src="./lista-vaga-empresa.js"></script>
-
-</body>
+  </body>
 </html>
