@@ -14,6 +14,7 @@ CREATE TABLE user_profissional_profile (
     endereco_cep VARCHAR(20),  
     endereco_cidade VARCHAR(255),  
     endereco_bairro VARCHAR(255),  
+    resumo VARCHAR(255),
     descricao VARCHAR(30),
     estado_civil INT,  
     identidade_genero INT,  

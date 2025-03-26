@@ -18,7 +18,7 @@ const userGithub = document.getElementById('userGithub');
 const userWebsite = document.getElementById('userWebsite');
 const userPortfolio = document.getElementById('userPortfolio');
 const userNacionalidade = document.getElementById('userNacionalidade');
-
+const userDescricao = document.getElementById('userDescricao');
 
 const logoutButton = document.getElementById('logoutButton');
 const messageDiv = document.getElementById('message');
@@ -47,7 +47,7 @@ async function loadProfile() {
                 userName.textContent = data.user.profile.nome_completo || 'Não disponível';
                 userDataNascimento.textContent = data.user.profile.data_nascimento || 'Não disponível';
                 userEmail.textContent = data.user.email || 'Não disponível';
-                userResumo.textContent = data.user.profile.descricao || 'Não disponível';
+                userResumo.textContent = data.user.profile.resumo || 'Não disponível';
                 userLocalizacao.textContent = data.user.profile.nacionalidade || 'Não disponível';  // Atualizado para 'nacionalidade'
                 userContato.textContent = data.user.profile.contato || 'Não disponível';
                 userEspecializacao.textContent = data.user.profile.especializacao || 'Não disponível';  // Se você tem um campo de especialização, ou ajustar conforme o seu banco de dados
@@ -62,6 +62,7 @@ async function loadProfile() {
                 userWebsite.textContent = data.user.profile.website || 'Não disponível';
                 userPortfolio.textContent = data.user.profile.portfolio || 'Não disponível';
                 userLinkCurriculo.textContent = data.user.profile.link_curriculo || 'Não disponível';
+                userDescricao.textContent = data.user.profile.descricao || 'Não disponível';
 
             // Exibir o link do currículo (como um link clicável, se houver)
             if (data.user.profile.link_curriculo) {

@@ -164,6 +164,7 @@ const getUserProfile = async (req, res) => {
             "endereco_cep",
             "endereco_cidade",
             "endereco_bairro",
+            "resumo",
             "descricao",
             "estado_civil",
             "identidade_genero",

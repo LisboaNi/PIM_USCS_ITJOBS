@@ -27,7 +27,7 @@ BEGIN
         link_curriculo
     ) VALUES (
         NEW.id,  -- user_id será o id do novo usuário
-        '',      -- nome_completo (deixe em branco ou coloque um valor padrão)
+        NEW.name,      -- nome_completo (deixe em branco ou coloque um valor padrão)
         NULL,    -- data_nascimento (deixe como NULL ou coloque um valor padrão)
         '',      -- nacionalidade (deixe em branco ou coloque um valor padrão)
         '',      -- contato

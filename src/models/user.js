@@ -128,6 +128,10 @@ const UserProfissionalProfile = sequelize.define(
         key: "id",
       },
     },
+    resumo: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     deficiencia: {
       type: DataTypes.BOOLEAN,
     },
