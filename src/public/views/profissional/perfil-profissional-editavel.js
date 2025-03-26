@@ -5,13 +5,23 @@ const userLocalizacao = document.getElementById('userLocalizacao');
 const userContato = document.getElementById('userContato');
 const userEspecializacao = document.getElementById('userEspecializacao');
 const userLinkCurriculo = document.getElementById('userLinkCurriculo');
-//const userRedesSociais = document.getElementById('userRedesSociais');
 const userAvatar = document.getElementById('userAvatar');
 const fileInput = document.getElementById('fileInput');
 const saveButton = document.getElementById('saveButton');
 const logoutButton = document.getElementById('logoutButton');
 const messageDiv = document.getElementById('message');
 const userDataNascimento = document.getElementById('userDataNascimento');
+
+// Novos campos adicionados
+const userEstadoCivil = document.getElementById('userEstadoCivil');
+const userIdentidadeGenero = document.getElementById('userIdentidadeGenero');
+const userOrientacaoSexual = document.getElementById('userOrientacaoSexual');
+const userRacaEtnia = document.getElementById('userRacaEtnia');
+const userDeficiencia = document.getElementById('userDeficiencia');  // Para o checkbox
+const userGithub = document.getElementById('userGithub');
+const userWebsite = document.getElementById('userWebsite');
+const userPortfolio = document.getElementById('userPortfolio');
+const userNacionalidade = document.getElementById('userNacionalidade');
 
 const token = localStorage.getItem('token');
 if (!token) {
@@ -29,14 +39,28 @@ async function loadProfile() {
 
         const data = await response.json();
         if (response.ok) {
-            userName.value = data.user.profile.nome_completo;
-            userEmail.value = data.user.email;
-            userResumo.value = data.user.profile.resumo;
-            userLocalizacao.value = data.user.profile.localizacao;
-            userContato.value = data.user.profile.contato;
-            userEspecializacao.value = data.user.profile.especializacao || 'Não disponível';
-            userLinkCurriculo.value = data.user.profile.link_curriculo || 'Não disponível';
-        //    userRedesSociais.value = JSON.stringify(data.user.profile.redes_sociais || 'Não disponível');
+
+            // Preencher os campos de edição com os dados do usuário
+                userName.value = data.user.profile.nome_completo || 'Não disponível';
+                userEmail.value = data.user.email || 'Não disponível';
+                userResumo.value = data.user.profile.descricao || 'Não disponível';  // Ajustado para 'descricao'
+                userLocalizacao.value = data.user.profile.nacionalidade || 'Não disponível';  // Ajustado para 'nacionalidade'
+                userContato.value = data.user.profile.contato || 'Não disponível';
+                userEspecializacao.value = data.user.profile.especializacao || 'Não disponível';  // Se você tem um campo de especialização
+                userLinkCurriculo.value = data.user.profile.link_curriculo || 'Não disponível';
+
+                // Preencher os novos campos
+                userEstadoCivil.value = data.user.profile.estado_civil || 'Não disponível';
+                userIdentidadeGenero.value = data.user.profile.identidade_genero || 'Não disponível';
+                userOrientacaoSexual.value = data.user.profile.orientacao_sexual || 'Não disponível';
+                userRacaEtnia.value = data.user.profile.raca_etnia || 'Não disponível';
+                userDeficiencia.checked = data.user.profile.deficiencia || false;  // Para o campo de checkbox (assumindo que é um campo de checkbox)
+                userGithub.value = data.user.profile.github || 'Não disponível';
+                userWebsite.value = data.user.profile.website || 'Não disponível';
+                userPortfolio.value = data.user.profile.portfolio || 'Não disponível';
+                userAvatar.value = data.user.profile.avatar || 'Não disponível';  // Se for um campo de imagem
+
+
             if (data.user.profile.avatar) {
                 userAvatar.src = data.user.profile.avatar;
             }
