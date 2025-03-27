@@ -227,12 +227,15 @@ const editUserProfile = async (req, res) => {
   const {
     nome_completo,
     resumo,
-    localizacao,
+    descricao, 
     contato,
-    redes_sociais,
     avatar,
     data_nascimento,
-    especializacao,
+    nacionalidade, 
+    endereco_rua, 
+    endereco_cep, 
+    endereco_cidade, 
+    endereco_bairro,
     link_curriculo,
     estado_civil,
     identidade_genero,
@@ -243,6 +246,7 @@ const editUserProfile = async (req, res) => {
     website,
     portfolio,
   } = req.body;
+
 
   try {
     // Verificar se o token foi passado na requisição
@@ -272,29 +276,25 @@ const editUserProfile = async (req, res) => {
         // Atualizar perfil profissional
         await userProfissionalProfile.update({
           nome_completo,
-          resumo,
+          data_nascimento: data_nascimento || userProfissionalProfile.data_nascimento, 
           nacionalidade,
           contato,
-          avatar,
-          data_nascimento:
-            data_nascimento || userProfissionalProfile.data_nascimento, // Verifica se data de nascimento foi enviada
-          especializacao:
-            especializacao || userProfissionalProfile.especializacao, // Verifica se especialização foi enviada
-          link_curriculo:
-            link_curriculo || userProfissionalProfile.link_curriculo, // Verifica se link do currículo foi enviado
-          estado_civil: estado_civil || userProfissionalProfile.estado_civil, // Atualiza estado civil se fornecido
-          identidade_genero:
-            identidade_genero || userProfissionalProfile.identidade_genero, // Atualiza identidade de gênero se fornecido
-          orientacao_sexual:
-            orientacao_sexual || userProfissionalProfile.orientacao_sexual, // Atualiza orientação sexual se fornecido
-          raca_etnia: raca_etnia || userProfissionalProfile.raca_etnia, // Atualiza raça/etnia se fornecido
-          deficiencia:
-            deficiencia !== undefined
-              ? deficiencia
-              : userProfissionalProfile.deficiencia, // Verifica se deficiência foi enviada (boolean)
+          endereco_rua: endereco_rua || userProfissionalProfile.endereco_rua,
+          endereco_cep: endereco_cep || userProfissionalProfile.endereco_cep,
+          endereco_cidade: endereco_cidade || userProfissionalProfile.endereco_cidade,
+          endereco_bairro: endereco_bairro || userProfissionalProfile.endereco_bairro,
+          resumo,
+          descricao,
+          estado_civil: estado_civil || userProfissionalProfile.estado_civil,
+          identidade_genero: identidade_genero || userProfissionalProfile.identidade_genero,
+          orientacao_sexual: orientacao_sexual || userProfissionalProfile.orientacao_sexual,
+          raca_etnia: raca_etnia || userProfissionalProfile.raca_etnia,
+          deficiencia: deficiencia !== undefined ? deficiencia : userProfissionalProfile.deficiencia,
           github,
           website,
           portfolio,
+          link_curriculo: link_curriculo || userProfissionalProfile.link_curriculo,
+          avatar
         });
         return res
           .status(200)

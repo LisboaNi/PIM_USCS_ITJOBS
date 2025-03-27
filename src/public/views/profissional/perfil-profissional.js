@@ -50,7 +50,6 @@ async function loadProfile() {
                 userResumo.textContent = data.user.profile.resumo || 'Não disponível';
                 userLocalizacao.textContent = data.user.profile.nacionalidade || 'Não disponível';  // Atualizado para 'nacionalidade'
                 userContato.textContent = data.user.profile.contato || 'Não disponível';
-                userEspecializacao.textContent = data.user.profile.especializacao || 'Não disponível';  // Se você tem um campo de especialização, ou ajustar conforme o seu banco de dados
 
                 // Exibindo os novos campos
                 userEstadoCivil.textContent = data.user.profile.estado_civil || 'Não disponível';

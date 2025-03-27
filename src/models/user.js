@@ -182,7 +182,7 @@ const UserEmpresaProfile = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    nacionalidade: DataTypes.STRING,
+    localizacao: DataTypes.STRING,
     contato: DataTypes.STRING,
     resumo: DataTypes.TEXT,
     avatar: DataTypes.STRING,
