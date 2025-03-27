@@ -1,236 +1,196 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../css/output.css" />
-  </head>
-  <body>
-    <!-- Cabeçalho da página -->
-    <header class="bg-white p-7 shadow-md">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a
-            href="/src/public/index.html"
-            class="border-none text-4xl font-bold text-primary"
-          >
-            IT.<span class="text-3xl text-secondary">{JOBS}</span>
-          </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/output.css" />
+</head>
+
+<body>
+  <!-- Cabeçalho da página -->
+  <header class="bg-white p-4 shadow-md">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="../../index.html" class="border-none text-4xl font-bold text-primary">
+          IT.<span class="text-3xl text-secondary">{JOBS}</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
+          <li class="link_header_custom">
+            <a href="../profissional/filtro-vaga.html">Vagas</a>
+          </li>
+          <li class="link_header_custom">
+            <a href="./historico-inscricoes.html">Minhas Vagas</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
+          </li>
+        </ul>
+
+        <div class="ml-6 flex items-center gap-2">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
+          <h1>
+            <span class="text-xl font-bold"></span>
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
-        <div class="flex items-center">
-          <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
-            <li class="link_header_custom">
-              <a href="../profissional/filtro-vaga.html">Vagas</a>
-            </li>
-            <li class="link_header_custom"><a href="#">Organizações</a></li>
-            <li></li>
-            <li class="link_header_custom">
-              <a href="./historico-inscricoes.html">Minhas Vagas</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
-            </li>
-          </ul>
+      </div>
+    </nav>
+  </header>
 
-          <div class="ml-6 flex items-center gap-2">
-            <img
-              id="userAvatar"
-              alt="Avatar"
-              class="h-14 w-14 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold"> </span>
-            </h1>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
+  <div class="flex">
+    <aside class="flex h-screen min-w-[300px] flex-col items-center bg-[#001C55] px-5 py-48 text-text_primary">
+      <div>
+        <div class="flex flex-col items-center gap-1">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
+          <h1>
+            <span id="userName" class="text-xl font-bold"></span>
+          </h1>
         </div>
-      </nav>
-    </header>
-
-    <div class="flex">
-      <aside
-        class="flex h-screen w-auto flex-col items-center bg-[#001C55] px-5 py-48 text-text_primary"
-      >
-        <div>
-          <div class="flex flex-col items-center gap-1">
-            <img
-              id="userAvatar"
-              alt="Avatar"
-              class="mb-4 h-40 w-40 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold"></span>
-            </h1>
-          </div>
-        </div>
-        <div>
-          <h2 class="mt-20">Contato</h2>
-          <div class="ml-3 mt-2 flex flex-col gap-3">
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope"></i>
-              <span id="userEmail"></span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-mobile"></i>
-              <span id="userContato"></span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot"></i>
-              <span id="userLocalizacao"></span>
-            </p>
-          </div>
-        </div>
-      </aside>
-
-      <main class="w-full bg-gray-200 p-2">
-        <div id="message" class="message hidden"></div>
-        <section
-          class="grid w-full grid-cols-3 grid-rows-[repeat(3,minmax(50px,1fr))] rounded-xl bg-white px-14 py-5"
-        >
-          <div
-            class="col-span-4 row-start-1 row-end-2 flex h-28 items-center justify-between"
-          >
-            <h1 class="text-xl text-[#0E6BA8]">Dados Pessoais</h1>
-            <button
-              onclick="window.location.href = 'perfil-profissional-editavel.html'"
-              class="btn-animated"
-            >
-              <span>Editar</span>
-            </button>
-          </div>
-
-          <div class="col-start-1 col-end-2 row-start-2 row-end-4 text-primary">
-            <h2 class="text-lg font-bold">Dados Pessoais</h2>
-            <div class="mt-4 flex flex-col gap-4">
-              <p><strong>Nome: </strong><span id="userName"></span></p>
-              <p>
-                <strong>Data de Nascimento: </strong
-                ><span id="userDataNascimento"></span>
-              </p>
-              <p>
-                <strong>Nacionalidade: </strong
-                ><span id="userNacionalidade"></span>
-              </p>
-              <p><strong>CPF: </strong><span id="userCpf"></span></p>
-              <p>
-                <strong>Estado Civil: </strong
-                ><span id="userEstadoCivil"></span>
-              </p>
-              <p>
-                <strong>Identidade de Genêro: </strong
-                ><span id="userIdentidade"></span>
-              </p>
-              <p>
-                <strong>Orientação sexual: </strong
-                ><span id="userOrientacao"></span>
-              </p>
-              <p><strong>Raça/Etnia: </strong><span id="userRaca"></span></p>
-            </div>
-          </div>
-
-          <div class="col-start-3 col-end-4">
-            <p>
-              <span id="userResumo"></span>
-            </p>
-          </div>
-          <div class="col-start-3 col-end-4">
-            <h2 class="font-bold text-primary">Endereço</h2>
-            <p><strong>CEP: </strong><span></span></p>
-            <p><strong>Rua: </strong><span></span></p>
-            <p><strong>Bairro: </strong><span></span></p>
-            <p><strong>Cidade: </strong><span></span></p>
-          </div>
-          <div class="col-start-3 col-end-4">
-            <h2 class="flex items-center gap-2 font-bold text-primary">
-              <span>Deficiências</span><i class="fa-solid fa-wheelchair"></i>
-            </h2>
-            <p><span></span></p>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <footer class="bg-primary py-10 text-text_primary">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Seção 1: Logo e descrição -->
-          <div>
-            <h2 class="mb-4 text-3xl font-semibold">IT JOBS</h2>
-            <p class="text-gray-400">
-              A plataforma definitiva para encontrar oportunidades no mercado de
-              TI. Conecte-se com as melhores empresas e avance em sua carreira.
-            </p>
-          </div>
-
-          <!-- Seção 2: Links rápidos -->
-          <div>
-            <h3 class="mb-4 text-lg font-semibold">Links Rápidos</h3>
-            <ul class="space-y-2">
-              <li><a href="#" class="hover:text-[#A6E1FA]">Home</a></li>
-              <li><a href="#" class="hover:text-[#A6E1FA]">Sobre Nós</a></li>
-              <li><a href="#" class="hover:text-[#A6E1FA]">Assinaturas</a></li>
-              <li><a href="#" class="hover:text-[#A6E1FA]">FAQ</a></li>
-            </ul>
-          </div>
-
-          <!-- Seção 3: Redes sociais -->
-          <div>
-            <h3 class="mb-4 text-lg font-semibold">Siga-nos</h3>
-            <div class="flex space-x-6">
-              <a href="#" class="hover:text-[#A6E1FA]"
-                ><i class="fab fa-facebook-f"></i> Facebook</a
-              >
-              <a href="#" class="hover:text-[#A6E1FA]"
-                ><i class="fab fa-twitter"></i> Twitter</a
-              >
-              <a href="#" class="hover:text-[#A6E1FA]"
-                ><i class="fab fa-linkedin-in"></i> LinkedIn</a
-              >
-              <a href="#" class="hover:text-[#A6E1FA]"
-                ><i class="fab fa-instagram"></i> Instagram</a
-              >
-            </div>
-          </div>
-
-          <!-- Seção 4: Contato -->
-          <div>
-            <h3 class="mb-4 text-lg font-semibold">Contato</h3>
-            <p class="text-gray-400">
-              Email:
-              <a href="mailto:contato@itjobs.com" class="hover:text-[#A6E1FA]"
-                >contato@itjobs.com</a
-              >
-            </p>
-            <p class="text-gray-400">
-              Telefone:
-              <a href="tel:+5511987654321" class="hover:text-[#A6E1FA]"
-                >+55 11 98765-4321</a
-              >
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
-          <p class="text-gray-400">
-            © 2025 IT JOBS. Todos os direitos reservados.
+      </div>
+      <div>
+        <h2 class="mt-20">Contato</h2>
+        <div class="ml-3 mt-2 flex flex-col gap-3">
+          <p class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            <span id="userEmail"></span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="fa-solid fa-mobile"></i>
+            <span id="userContato"></span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="userLocalizacao"></span>
           </p>
         </div>
       </div>
-    </footer>
+    </aside>
 
-    <script src="./perfil-profissional.js"></script>
-  </body>
+    <main class="w-full bg-gray-200 p-2">
+      <div id="message" class="message hidden"></div>
+      <section class="grid w-full grid-cols-3 grid-rows-[repeat(3,minmax(50px,1fr))] rounded-xl bg-white px-14 py-5">
+        <div class="col-span-4 row-start-1 row-end-2 flex h-28 items-center justify-between">
+          <h1 class="text-xl text-[#0E6BA8]">Dados Pessoais</h1>
+          <button onclick="window.location.href = 'perfil-profissional-editavel.html'" class="btn-animated">
+            <span>Editar</span>
+          </button>
+        </div>
+
+        <div class="col-start-1 col-end-2 row-start-2 row-end-4 text-primary">
+          <h2 class="text-lg font-bold">Dados Pessoais</h2>
+          <div class="mt-4 flex flex-col gap-4">
+            <p><strong>Nome: </strong><span id="userName"></span></p>
+            <p>
+              <strong>Data de Nascimento: </strong><span id="userDataNascimento"></span>
+            </p>
+            <p>
+              <strong>Nacionalidade: </strong><span id="userNacionalidade"></span>
+            </p>
+            <p><strong>CPF: </strong><span id="userCpf"></span></p>
+            <p>
+              <strong>Estado Civil: </strong><span id="userEstadoCivil"></span>
+            </p>
+            <p>
+              <strong>Identidade de Genêro: </strong><span id="userIdentidade"></span>
+            </p>
+            <p>
+              <strong>Orientação sexual: </strong><span id="userOrientacao"></span>
+            </p>
+            <p><strong>Raça/Etnia: </strong><span id="userRaca"></span></p>
+          </div>
+        </div>
+
+        <div class="col-start-3 col-end-4">
+          <p>
+            <span id="userResumo"></span>
+          </p>
+        </div>
+        <div class="col-start-3 col-end-4">
+          <h2 class="font-bold text-primary">Endereço</h2>
+          <p><strong>CEP: </strong><span></span></p>
+          <p><strong>Rua: </strong><span></span></p>
+          <p><strong>Bairro: </strong><span></span></p>
+          <p><strong>Cidade: </strong><span></span></p>
+        </div>
+        <div class="col-start-3 col-end-4">
+          <h2 class="flex items-center gap-2 font-bold text-primary">
+            <span>Deficiências</span><i class="fa-solid fa-wheelchair"></i>
+          </h2>
+          <p><span></span></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="bg-primary py-10 text-text_primary">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Seção 1: Logo e descrição -->
+        <div>
+          <h2 class="mb-4 text-3xl font-semibold">IT JOBS</h2>
+          <p class="text-gray-400">
+            A plataforma definitiva para encontrar oportunidades no mercado de
+            TI. Conecte-se com as melhores empresas e avance em sua carreira.
+          </p>
+        </div>
+
+        <!-- Seção 2: Links rápidos -->
+        <div>
+          <h3 class="mb-4 text-lg font-semibold">Links Rápidos</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-[#A6E1FA]">Home</a></li>
+            <li><a href="#" class="hover:text-[#A6E1FA]">Sobre Nós</a></li>
+            <li><a href="#" class="hover:text-[#A6E1FA]">Assinaturas</a></li>
+            <li><a href="#" class="hover:text-[#A6E1FA]">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Seção 3: Redes sociais -->
+        <div>
+          <h3 class="mb-4 text-lg font-semibold">Siga-nos</h3>
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-[#A6E1FA]"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="hover:text-[#A6E1FA]"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="hover:text-[#A6E1FA]"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="hover:text-[#A6E1FA]"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+
+        <!-- Seção 4: Contato -->
+        <div>
+          <h3 class="mb-4 text-lg font-semibold">Contato</h3>
+          <p class="text-gray-400">
+            Email:
+            <a href="mailto:contato@itjobs.com" class="hover:text-[#A6E1FA]">contato@itjobs.com</a>
+          </p>
+          <p class="text-gray-400">
+            Telefone:
+            <a href="tel:+5511987654321" class="hover:text-[#A6E1FA]">+55 11 98765-4321</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+        <p class="text-gray-400">
+          © 2025 IT JOBS. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./perfil-profissional.js"></script>
+</body>
+
 </html>
 
 <!-- <button id="logoutButton">Desconectar</button> -->

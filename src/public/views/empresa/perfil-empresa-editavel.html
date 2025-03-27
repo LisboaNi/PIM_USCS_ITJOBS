@@ -1,130 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
-     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../css/output.css" />
-    </style>
-  </head>
-  <body>
-    <header class="w-full bg-white p-4 shadow-md">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a
-            href="/src/public/index.html"
-            class="border-none text-4xl font-bold text-primary"
-          >
-            IT.<span class="text-3xl text-secondary">{JOBS}</span>
-          </a>
-        </div>
-        <div class="flex items-center">
-          <div class="ml-6 flex items-center gap-2">
-            <img
-              id="userAvatar"
-              src="../../images/joao.avif"
-              alt="Avatar"
-              class="h-14 w-14 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold">João Almeida</span>
-            </h1>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-  
-    <main class="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
-      <div id="message" class="message hidden mb-4"></div>
 
-      <div id="profileInfo" class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-8">
-        <h1 class="text-4xl font-bold text-center text-primary mb-6">Perfil Editável</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/output.css" />
+  </style>
+</head>
 
-        <p class="mb-4">
-          <strong class="block text-md font-medium text-gray-700">Nome da Empresa:</strong>
-          <input type="text" id="userNomeEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-        </p>
+<body>
+  <header class="w-full bg-white p-4 shadow-md">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="/src/public/index.html" class="border-none text-4xl font-bold text-primary">
+          IT.<span class="text-3xl text-secondary">{JOBS}</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <div class="ml-6 flex items-center gap-2">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
 
-        <p class="mb-4">
-          <strong class="block text-md font-medium text-gray-700">Nº de Funcionários: </strong>
-          <input type="text" id="userFuncEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-        </p>
-
-        <p class="mb-4">
-          <strong class="block text-md font-medium text-gray-700">Setor:</strong>
-          <input type="text" id="userSetorEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-        </p>
-        
-        <p class="mb-4">
-          <strong class="block text-md font-medium text-gray-700">Ano de Fundação:</strong>
-          <input type="text" id="userAnoEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-        </p>
-
-        <div class="form-field">
-            <p>
-              <strong class="block text-md font-medium text-gray-700">Contato:</strong>
-              <input type="text" id="userContatoEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-            </p>
-        </div>
-
-        <div class="form-group grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mt-4">
-          <div class="form-field">
-            <p>
-              <strong class="block text-md font-medium text-gray-700">CEP:</strong>
-              <input type="text" id="userCepEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-            </p>
-          </div>
-          <div class="form-field">
-            <p>
-              <strong class="block text-md font-medium text-gray-700">Rua:</strong>
-              <input type="text" id="userRuaEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-            </p>
-          </div>
-          <div class="form-field">
-            <p>
-              <strong class="block text-md font-medium text-gray-700">Bairro:</strong>
-              <input type="text" id="userBairroEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-            </p>
-          </div>
-          <div class="form-field">
-            <p>
-              <strong class="block text-md font-medium text-gray-700">Cidade:</strong>
-              <input type="text" id="userCidadeEmpresa" class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
-            </p>
-          </div>
-        </div>
-
-        <p class="mb-4">
-          <strong class="block text-md font-medium text-gray-700">Resumo da Empresa:</strong>
-          <textarea id="userResumoEmpresa" class="editable w-full h-24 rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]"></textarea>
-        </p>
-
-        <div id="actionButtons" class="flex justify-between mt-6">
-          <button id="saveButton" class="w-1/2 mr-2 rounded-lg bg-primary py-2.5 font-medium text-white transition hover:bg-secondary">
-            <i class="fa fa-save"></i> Salvar
-          </button>
-          <button id="cancelButton" onclick="window.location.href='perfil-empresa.html'" class="w-1/2 ml-2 rounded-lg bg-red-500 py-2.5 font-medium text-white transition hover:bg-red-600">
-            <i class="fa fa-times"></i> Cancelar
-          </button>
+          <h1>
+            <span id="userName" class="text-xl font-bold">João Almeida</span>
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
       </div>
-    </main>
+    </nav>
+  </header>
 
-    
+  <main class="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
+    <div id="message" class="message hidden mb-4"></div>
 
-    
+    <div id="profileInfo" class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-8">
+      <h1 class="text-4xl font-bold text-center text-primary mb-6">Perfil Editável</h1>
 
-    <!-- <script src="./perfil-empresa-editavel.js"></script> -->
-  </body>
+      <p class="mb-4">
+        <strong class="block text-md font-medium text-gray-700">Nome da Empresa:</strong>
+        <input type="text" id="userNomeEmpresa"
+          class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+      </p>
+
+      <p class="mb-4">
+        <strong class="block text-md font-medium text-gray-700">Nº de Funcionários: </strong>
+        <input type="text" id="userFuncEmpresa"
+          class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+      </p>
+
+      <p class="mb-4">
+        <strong class="block text-md font-medium text-gray-700">Setor:</strong>
+        <input type="text" id="userSetorEmpresa"
+          class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+      </p>
+
+      <p class="mb-4">
+        <strong class="block text-md font-medium text-gray-700">Ano de Fundação:</strong>
+        <input type="text" id="userAnoEmpresa"
+          class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+      </p>
+
+      <div class="form-field">
+        <p>
+          <strong class="block text-md font-medium text-gray-700">Contato:</strong>
+          <input type="text" id="userContatoEmpresa"
+            class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+        </p>
+      </div>
+
+      <div class="form-group grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mt-4">
+        <div class="form-field">
+          <p>
+            <strong class="block text-md font-medium text-gray-700">CEP:</strong>
+            <input type="text" id="userCepEmpresa"
+              class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+          </p>
+        </div>
+        <div class="form-field">
+          <p>
+            <strong class="block text-md font-medium text-gray-700">Rua:</strong>
+            <input type="text" id="userRuaEmpresa"
+              class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+          </p>
+        </div>
+        <div class="form-field">
+          <p>
+            <strong class="block text-md font-medium text-gray-700">Bairro:</strong>
+            <input type="text" id="userBairroEmpresa"
+              class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+          </p>
+        </div>
+        <div class="form-field">
+          <p>
+            <strong class="block text-md font-medium text-gray-700">Cidade:</strong>
+            <input type="text" id="userCidadeEmpresa"
+              class="editable w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]" />
+          </p>
+        </div>
+      </div>
+
+      <p class="mb-4">
+        <strong class="block text-md font-medium text-gray-700">Resumo da Empresa:</strong>
+        <textarea id="userResumoEmpresa"
+          class="editable w-full h-24 rounded-lg border border-gray-300 px-4 py-2 focus:border-[#0A2472] focus:ring-2 focus:ring-[#0A2472]"></textarea>
+      </p>
+
+      <div id="actionButtons" class="flex justify-between mt-6">
+        <button id="saveButton"
+          class="w-1/2 mr-2 rounded-lg bg-primary py-2.5 font-medium text-white transition hover:bg-secondary">
+          <i class="fa fa-save"></i> Salvar
+        </button>
+        <button id="cancelButton" onclick="window.location.href='perfil-empresa.html'"
+          class="w-1/2 ml-2 rounded-lg bg-red-500 py-2.5 font-medium text-white transition hover:bg-red-600">
+          <i class="fa fa-times"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <!-- <script src="./perfil-empresa-editavel.js"></script> -->
+</body>
+
 </html>

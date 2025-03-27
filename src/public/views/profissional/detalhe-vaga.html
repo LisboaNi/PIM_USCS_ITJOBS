@@ -1,103 +1,91 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalhes da Vaga</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../css/output.css" />
-  </head>
-  <body class="min-h-screen bg-gray-100">
-    <!-- Cabeçalho da página -->
-    <header class="w-full bg-white p-5 shadow-md">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a
-            href="/src/public/index.html"
-            class="border-none text-4xl font-bold text-primary"
-          >
-            IT.<span class="text-3xl text-secondary">{JOBS}</span>
-          </a>
-        </div>
-        <div class="flex items-center">
-          <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
-            <li class="link_header_custom"><a href="#">Vagas</a></li>
-            <li class="link_header_custom"><a href="#">Organizações</a></li>
-            <li>
-              <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
-            </li>
-          </ul>
 
-          <div class="ml-6 flex items-center gap-2">
-            <img
-              id="userAvatar"
-              src="../../images/joao.avif"
-              alt="Avatar"
-              class="h-14 w-14 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold">João Almeida</span>
-            </h1>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="flex items-center justify-center py-10">
-      <div
-        id="profileInfo"
-        class="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-lg"
-      >
-        <h1 class="mb-4 text-center text-3xl font-bold text-[#0A2472]">
-          <strong>Vaga:</strong>
-          <span id="titulo" class=""></span>
-        </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes da Vaga</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/output.css" />
+</head>
 
-        <div class="space-y-4 text-lg text-[#001C55]">
-          <p>
-            <strong>Status:</strong>
-            <span id="status" class="font-semibold text-[#0E6BA8]"></span>
-          </p>
-          <p>
-            <strong>Salário:</strong>
-            <span id="salario" class="font-semibold text-green-600"></span>
-          </p>
-          <p><strong>Endereço:</strong> <span id="localizacao"></span></p>
-          <p>
-            <strong>Tipo de Contrato:</strong> <span id="tipo_contrato"></span>
-          </p>
-          <p>
-            <strong>Nível de Experiência:</strong>
-            <span id="nivel_experiencia"></span>
-          </p>
-        </div>
+<body class="min-h-screen bg-gray-100">
+  <!-- Cabeçalho da página -->
+  <header class="bg-white p-4 shadow-md">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="../../index.html" class="border-none text-4xl font-bold text-primary">
+          IT.<span class="text-3xl text-secondary">{JOBS}</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <ul class="flex items-center gap-5 border-r-2 border-primary px-6">
+          <li class="link_header_custom">
+            <a href="../profissional/filtro-vaga.html">Vagas</a>
+          </li>
+          <li class="link_header_custom">
+            <a href="./historico-inscricoes.html">Minhas Vagas</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-bell text-3xl"></i></a>
+          </li>
+        </ul>
 
-        <div class="mt-4 text-lg text-gray-700">
-          <p><strong>Descrição:</strong></p>
-          <p id="descricao" class="mt-2 leading-relaxed text-gray-600"></p>
-        </div>
-
-        <div id="actionButtons" class="mt-6 flex justify-center">
-          <a
-            href="javascript:history.back()"
-            id="btn-voltar"
-            class="btn-animated"
-          >
-            <i class="fa fa-arrow-left"></i> <span>Voltar</span>
-          </a>
+        <div class="ml-6 flex items-center gap-2">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
+          <h1>
+            <span class="text-xl font-bold"></span>
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
       </div>
-    </main>
+    </nav>
+  </header>
+  <main class="flex items-center justify-center py-10">
+    <div id="profileInfo" class="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-lg">
+      <h1 class="mb-4 text-center text-3xl font-bold text-[#0A2472]">
+        <strong>Vaga:</strong>
+        <span id="titulo" class=""></span>
+      </h1>
 
-    <script src="./detalhe-vaga.js"></script>
-  </body>
+      <div class="space-y-4 text-lg text-[#001C55]">
+        <p>
+          <strong>Status:</strong>
+          <span id="status" class="font-semibold text-[#0E6BA8]"></span>
+        </p>
+        <p>
+          <strong>Salário:</strong>
+          <span id="salario" class="font-semibold text-green-600"></span>
+        </p>
+        <p><strong>Endereço:</strong> <span id="localizacao"></span></p>
+        <p>
+          <strong>Tipo de Contrato:</strong> <span id="tipo_contrato"></span>
+        </p>
+        <p>
+          <strong>Nível de Experiência:</strong>
+          <span id="nivel_experiencia"></span>
+        </p>
+      </div>
+
+      <div class="mt-4 text-lg text-gray-700">
+        <p><strong>Descrição:</strong></p>
+        <p id="descricao" class="mt-2 leading-relaxed text-gray-600"></p>
+      </div>
+
+      <div id="actionButtons" class="mt-6 flex justify-center">
+        <a href="javascript:history.back()" id="btn-voltar" class="btn-animated">
+          <i class="fa fa-arrow-left"></i> <span>Voltar</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="./detalhe-vaga.js"></script>
+</body>
+
 </html>

@@ -1,63 +1,55 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Candidatos Inscritos</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../css/output.css" />
-  </head>
-  <body class="bg-gray-100">
-    <header class="w-full bg-white p-5 shadow-md">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a
-            href="/src/public/index.html"
-            class="border-none text-4xl font-bold text-primary"
-          >
-            IT.<span class="text-3xl text-secondary">{JOBS}</span>
-          </a>
-        </div>
-        <div class="flex items-center">
-          <div class="ml-6 flex items-center gap-2">
-            <img
-              id="userAvatar"
-              src="../../images/joao.avif"
-              alt="Avatar"
-              class="h-14 w-14 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold">João Almeida</span>
-            </h1>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
 
-    <main class="mx-auto mt-10 max-w-4xl rounded-lg bg-white p-8 shadow-lg">
-      <h1 class="mb-6 text-2xl font-bold text-gray-800">
-        Candidatos Inscritos
-      </h1>
-      <div id="candidatos-list" class="space-y-4">
-        <!-- Lista de candidatos será carregada aqui -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidatos Inscritos</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/output.css" />
+</head>
+
+<body class="bg-gray-100">
+  <header class="w-full bg-white p-5 shadow-md">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="/src/public/index.html" class="border-none text-4xl font-bold text-primary">
+          IT.<span class="text-3xl text-secondary">{JOBS}</span>
+        </a>
       </div>
-    </main>
+      <div class="flex items-center">
+        <div class="ml-6 flex items-center gap-2">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
 
-    <footer class="mt-10 text-center text-gray-600">
-      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-    </footer>
+          <h1>
+            <span id="userName" class="text-xl font-bold">João Almeida</span>
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <script src="./candidatos-vaga.js"></script>
-  </body>
+  <main class="mx-auto mt-10 max-w-4xl rounded-lg bg-white p-8 shadow-lg">
+    <h1 class="mb-6 text-2xl font-bold text-gray-800">
+      Candidatos Inscritos
+    </h1>
+    <div id="candidatos-list" class="space-y-4">
+      <!-- Lista de candidatos será carregada aqui -->
+    </div>
+  </main>
+
+  <footer class="mt-10 text-center text-gray-600">
+    <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./candidatos-vaga.js"></script>
+</body>
+
 </html>

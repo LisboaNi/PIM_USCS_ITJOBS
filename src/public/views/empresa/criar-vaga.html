@@ -1,153 +1,108 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Criar Vaga</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../css/output.css" />
-  </head>
-  <body class="flex min-h-screen flex-col items-center bg-gray-100">
-    <!-- Cabeçalho da página -->
-    <header class="w-full bg-white p-5 shadow-md">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a
-            href="/src/public/index.html"
-            class="border-none text-4xl font-bold text-primary"
-          >
-            IT.<span class="text-3xl text-secondary">{JOBS}</span>
-          </a>
-        </div>
-        <div class="flex items-center">
-          <div class="ml-6 flex items-center gap-2">
-            <img
-              id="userAvatar"
-              src="../../images/joao.avif"
-              alt="Avatar"
-              class="h-14 w-14 rounded-full object-cover"
-            />
-            <h1>
-              <span id="userName" class="text-xl font-bold">João Almeida</span>
-            </h1>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="mt-10 w-full max-w-2xl rounded-lg bg-white p-6 shadow-lg">
-      <h1 class="mb-6 text-center text-3xl font-bold text-primary">
-        Nova Vaga
-      </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Vaga</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/output.css" />
+</head>
 
-      <form id="createJobForm" class="space-y-4">
+<body class="flex min-h-screen flex-col items-center bg-gray-100">
+  <!-- Cabeçalho da página -->
+  <header class="w-full bg-white p-5 shadow-md">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="/src/public/index.html" class="border-none text-4xl font-bold text-primary">
+          IT.<span class="text-3xl text-secondary">{JOBS}</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <div class="ml-6 flex items-center gap-2">
+          <img src="../../images/image.jpeg" alt="Avatar" class="h-14 w-14 rounded-full object-cover" />
+
+          <h1>
+            <span id="userName" class="text-xl font-bold">João Almeida</span>
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="mt-10 w-full max-w-2xl rounded-lg bg-white p-6 shadow-lg">
+    <h1 class="mb-6 text-center text-3xl font-bold text-primary">
+      Nova Vaga
+    </h1>
+
+    <form id="createJobForm" class="space-y-4">
+      <div class="flex flex-col">
+        <label class="font-semibold">Título da Vaga:</label>
+        <input type="text" id="titulo" name="titulo" required placeholder="Desenvolvedor Frontend"
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600" />
+      </div>
+
+      <div class="flex flex-col">
+        <label class="font-semibold">Salário:</label>
+        <input type="number" id="salario" name="salario" step="0.01" placeholder="1500"
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col">
-          <label class="font-semibold">Título da Vaga:</label>
-          <input
-            type="text"
-            id="titulo"
-            name="titulo"
-            required
-            placeholder="Desenvolvedor Frontend"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-          />
-        </div>
-
-        <div class="flex flex-col">
-          <label class="font-semibold">Salário:</label>
-          <input
-            type="number"
-            id="salario"
-            name="salario"
-            step="0.01"
-            placeholder="1500"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-          />
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          <div class="flex flex-col">
-            <label class="font-semibold">Tipo de Contrato</label>
-            <select
-              id="tipo_contrato"
-              name="tipo_contrato"
-              required
-              class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="CLT">CLT</option>
-              <option value="PJ">PJ</option>
-              <option value="Freelancer">Freelancer</option>
-              <option value="Estágio">Estágio</option>
-            </select>
-          </div>
-
-          <div class="flex flex-col">
-            <label class="font-semibold">Nível de Experiência</label>
-            <select
-              id="nivel_experiencia"
-              name="nivel_experiencia"
-              required
-              class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="Júnior">Júnior</option>
-              <option value="Pleno">Pleno</option>
-              <option value="Sênior">Sênior</option>
-            </select>
-          </div>
+          <label class="font-semibold">Tipo de Contrato</label>
+          <select id="tipo_contrato" name="tipo_contrato" required
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600">
+            <option value="CLT">CLT</option>
+            <option value="PJ">PJ</option>
+            <option value="Freelancer">Freelancer</option>
+            <option value="Estágio">Estágio</option>
+          </select>
         </div>
 
         <div class="flex flex-col">
-          <label class="font-semibold">Endereço:</label>
-          <input
-            type="text"
-            id="localizacao"
-            name="localizacao"
-            placeholder="Região de Santo André"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-          />
+          <label class="font-semibold">Nível de Experiência</label>
+          <select id="nivel_experiencia" name="nivel_experiencia" required
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600">
+            <option value="Júnior">Júnior</option>
+            <option value="Pleno">Pleno</option>
+            <option value="Sênior">Sênior</option>
+          </select>
         </div>
+      </div>
 
-        <div class="flex flex-col">
-          <label class="font-semibold">Descrição:</label>
-          <textarea
-            id="descricao"
-            name="descricao"
-            rows="5"
-            required
-            class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"
-          ></textarea>
-        </div>
+      <div class="flex flex-col">
+        <label class="font-semibold">Endereço:</label>
+        <input type="text" id="localizacao" name="localizacao" placeholder="Região de Santo André"
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600" />
+      </div>
 
-        <div class="flex justify-between">
-          <button
-            type="submit"
-            id="saveButton"
-            class="btn-animated px-6 py-2 shadow-md"
-          >
-            <i class="fa fa-save"></i> <span>Criar</span>
-          </button>
-          <a
-            href="javascript:history.back()"
-            id="btn-voltar"
-            class="flex items-center gap-2 rounded-lg bg-gray-500 px-6 py-2 text-white shadow-md hover:bg-gray-600"
-          >
-            <i class="fa fa-arrow-left"></i> Voltar
-          </a>
-        </div>
-      </form>
-    </main>
+      <div class="flex flex-col">
+        <label class="font-semibold">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="5" required
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600"></textarea>
+      </div>
 
-    <script src="./criar-vaga.js"></script>
-  </body>
+      <div class="flex justify-between">
+        <button type="submit" id="saveButton" class="btn-animated px-6 py-2 shadow-md">
+          <i class="fa fa-save"></i> <span>Criar</span>
+        </button>
+        <a href="javascript:history.back()" id="btn-voltar"
+          class="flex items-center gap-2 rounded-lg bg-gray-500 px-6 py-2 text-white shadow-md hover:bg-gray-600">
+          <i class="fa fa-arrow-left"></i> Voltar
+        </a>
+      </div>
+    </form>
+  </main>
+
+  <script src="./criar-vaga.js"></script>
+</body>
+
 </html>
